@@ -3,7 +3,7 @@ Main repository for the final project for Class 04
 
 Note that the project is split into two sub-projects. One for the [client](/client) and one for the [server](server). Further documentation in these folders.
 
-![Archiv für die Musik Afrikas - Universität Mainz](https://github.com/hackyourfuture-cph/master/blob/ama.jpg)
+![Archiv für die Musik Afrikas - Universität Mainz](https://github.com/hackyourfuture-cph/class04-final-project/blob/master/ama1.png)
 
 ## Work stories
 
