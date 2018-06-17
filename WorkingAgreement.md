@@ -1,7 +1,6 @@
 Class working agreement:
 
 Iterations/Sprints/Deliverables:
-
 	º Respect the deadlines;
 	º Hand-in on Saturdays till 12:00.
 

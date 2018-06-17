@@ -1,6 +1,14 @@
 # CLASS04 - FINAL PROJECT
 Main repository for the final project for Class 04
 
+Work Agreement ()
+
+“Working agreement are guidelines that define how groups want to work together, and what they want in the working environment and from each other to feel safe and free to learn, explore and discover.”
+
+Read the agreement and live up to it. Your project and team work has to have rules so you develop and communicate in the same way and follow up eachothers work! A finished project is only a sucesss if you did it together and learned together.
+
+Feel free to review the points and contribute/pull request with new ones.
+
 Note that the project is split into two sub-projects. One for the [client](/client) and one for the [server](server). Further documentation in these folders.
 
 ![Archiv für die Musik Afrikas - Universität Mainz](https://github.com/hackyourfuture-cph/class04-final-project/blob/master/ama1.png)
