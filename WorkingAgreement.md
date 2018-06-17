@@ -8,7 +8,8 @@
 	º Check your Slack daily;
 	º Transparency;
 	º Create Slack channel for your team;
-	º Use Slack channel Class04 for help (use mentions appropriately: @channel (probably not), @here, @name @class04);
+	º Use Slack channel Class04 for help (use mentions appropriately: @channel (probably not), 
+	  @here, @name @class04);
 	º Communicate with your team/team mate;
 	º Share knowledge with your team/team mate;
 	º Frequent communication with your team mate;
