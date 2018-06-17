@@ -50,7 +50,9 @@ There will be one main repository for the project which will be forked by one st
 	º Meet face to face outside of class;
 	º Communicate frequently and do share screen sessions;
 	º Meet up to your group partner;
-	º We set a goal for how many hours a week we work and try to respect that. If you are delayed or need to skip a class or be absent from group work we make sure to notify the team members on Slack within reasonable time.
+	º We set a goal for how many hours a week we work and try to respect that. 
+	  If you are delayed or need to skip a class or be absent from group work we 
+	  make sure to notify the team members on Slack within reasonable time.
 
 We meet physically each week to work together and catch up on progress.
 
