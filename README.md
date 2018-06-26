@@ -23,7 +23,7 @@ Note that the project is split into two sub-projects. One for the [client](/clie
 
 ##### 1C: When I want to find a specific music genre I want to be able to search for specific year.
 
-###### Build an UI for:
+###### Build an UI using the mockup below as a guideline for:
 
      > A List View story of what you can search on the DB - use storybook and build the 
     components for the view;
