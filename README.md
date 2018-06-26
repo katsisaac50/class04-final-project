@@ -17,6 +17,9 @@ Note that the project is split into two sub-projects. One for the [client](/clie
 
 ### First iteration
 
+![Mockup01](https://github.com/hackyourfuture-cph/class04-final-project/blob/master/mockup01.jpg)
+
+
 Please check the JSON file in https://github.com/hackyourfuture-cph/class04-final-project/blob/master/database-24fdbd.json
 
 TBD
