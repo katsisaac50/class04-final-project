@@ -33,7 +33,7 @@ Note that the project is split into two sub-projects. One for the [client](/clie
 
 ###### Build an API to connect JSON file with UI.
 
-![Mockup01](https://github.com/https://github.com/dpfernandes/class04-final-project/blob/master/mockup01.png)
+![Mockup01](https://github.com/dpfernandes/class04-final-project/blob/master/mockup01.png)
 
 
 Please check the JSON file in https://github.com/hackyourfuture-cph/class04-final-project/blob/master/database-24fdbd.json
