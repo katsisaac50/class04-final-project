@@ -17,7 +17,17 @@ Note that the project is split into two sub-projects. One for the [client](/clie
 
 ### First iteration
 
-![Mockup01](https://github.com/hackyourfuture-cph/class04-final-project/blob/master/mockup01.png)
+1A: When I want to find a specific music I want to be able to search for specific music title.
+1B: When I want to find a specific artist I want to be able to search for specific artist.
+1C: When I want to find a specific music genre I want to be able to search for specific year.
+
+Build an UI for:
+     * A List View story of what you can search on the DB - use storybook and build the components for the view.
+     * A Search View - use storybook and build the components for the view. Use the data on the JSON file to demo
+Build a DB model based on the JSON file
+Build an API to connect JSON file with UI.
+
+![Mockup01](https://github.com/https://github.com/dpfernandes/class04-final-project/blob/master/mockup01.png)
 
 
 Please check the JSON file in https://github.com/hackyourfuture-cph/class04-final-project/blob/master/database-24fdbd.json
