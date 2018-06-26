@@ -17,6 +17,8 @@ Note that the project is split into two sub-projects. One for the [client](/clie
 
 ### First iteration
 
+Please check the JSON file in https://github.com/hackyourfuture-cph/class04-final-project/blob/master/database-24fdbd.json
+
 TBD
 
 ### Second iteration
