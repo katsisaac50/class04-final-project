@@ -40,7 +40,6 @@ Note that the project is split into two sub-projects. One for the [client](/clie
 
 Please check the JSON file in https://github.com/dpfernandes/class04-final-project/blob/master/database-24fdbd.json
 
-TBD
 
 ### Second iteration
 
