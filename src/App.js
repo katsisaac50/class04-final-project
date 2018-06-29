@@ -1,22 +1,34 @@
 import React, { Component } from 'react';
 import './App.css';
+import axios from 'axios';
 
 
-const url ="https://raw.githubusercontent.com/dpfernandes/class04-final-project/master/database-24fdbd.json"
+// const url ='http://localhost:3004/data'
 class App extends Component {
-
-
-  getInfo = () => {
-  fetch(url)
-  .then(function(data) {
-    console.log(data)
-    // Here you get the data to modify as you please
-    })
-  .catch(function(error) {
-    // If there is any error you will catch them here
-  });
+constructor(props){
+  super(props);
+  this.state={
+    musicData:[] };
 }
-
+  componentDidMount(){
+  // fetch(url)
+  // .then(function(response) {
+  //   console.log(response)
+  //   // Here you get the data to modify as you please
+  //   })
+  // .catch(function(error) {
+  //   // If there is any error you will catch them here
+  // });
+  axios.get('http://localhost:3004/data')
+      .then(response => {
+        console.log(response)
+       this.setState({ musicData: response.data });
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
+    
+}
 
   render() {
     return (
@@ -37,7 +49,7 @@ class Search extends React.Component {
             <form name="searchform" onSubmit={this.handleSubmit}>
 <label>
   Search here 
-            <input type="text" name="Search..." placeholder="Search..."/>
+            <input type="text" name="Search..." placeholder="Search..." onChange={this.searchHandler}/>
             <input type="submit" name="SearchSubmit" value="Search"/>
    </label>   
 
@@ -84,6 +96,7 @@ handleleftChange = () => {
   render(){
     return(
       <div className="thumbnail-container">
+      
    <ul className="thumbnail-list">
      <li><img className="thumbnail-image" src="http://placehold.it/300x300" alt=""/>
      <span></span></li>
@@ -94,3 +107,6 @@ handleleftChange = () => {
     )
   }
 }
+
+
+
