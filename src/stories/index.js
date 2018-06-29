@@ -5,6 +5,9 @@ import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
 
 import { Button, Welcome } from '@storybook/react/demo';
+import { Search } from './src/App.js';
+
+storiesOf('Search', module).add('with text', () => <Search On={linkTo('Button')} />);
 
 storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
 
