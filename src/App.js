@@ -8,8 +8,11 @@ class App extends Component {
 constructor(props){
   super(props);
   this.state={
-    musicData:[] };
+    musicData:[],
+  term:'',
+ };
 }
+
   componentDidMount(){
   // fetch(url)
   // .then(function(response) {
@@ -21,8 +24,9 @@ constructor(props){
   // });
   axios.get('http://localhost:3004/data')
       .then(response => {
-        console.log(response)
+        console.log(response.data)
        this.setState({ musicData: response.data });
+       
       })
       .catch(function (error) {
         console.log(error);
@@ -30,11 +34,16 @@ constructor(props){
     
 }
 
-  render() {
-    return (
+
+  render() {    
+    const{musicData}=this.state;
+
+    return (musicData.length > 0 &&
       <div >
+              {console.log(musicData)}
+
         <div>
-        <Search />
+        <Search data={this.state.musicData}/>
          <AlbumSuggestions />
         {/*<ScrollPage /> */}
      </div>
@@ -43,14 +52,39 @@ constructor(props){
   }
 }
 
+function searchingFor(term){
+  return function(x){
+    console.log(x)
+    return x.titles.toLowerCase().includes(term.toLowerCase())||!term;
+  }
+}
 class Search extends React.Component {
+  constructor(props){
+    super(props);
+    this.state={
+      musicData:this.props.data,
+    term:'',
+   };
+   this.searchHandler=this.searchHandler.bind(this)
+
+  }
+
+  searchHandler(e){
+    this.setState({term:e.target.value})
+  
+  }
+
   render() {
+    
+    const{musicData,term}=this.state;
+    console.log(term)
+    searchingFor(term)
     return (
+    <div>
             <form name="searchform" onSubmit={this.handleSubmit}>
 <label>
   Search here 
-            <input type="text" name="Search..." placeholder="Search..." onChange={this.searchHandler}/>
-            <input type="submit" name="SearchSubmit" value="Search"/>
+            <input type="text" name="Search..." placeholder="Search..." onChange={this.searchHandler} value={term}/>
    </label>   
 
             <input name="sengines" type="radio"  onChange={this.handleChange} /> All
@@ -60,6 +94,13 @@ class Search extends React.Component {
          
           
             </form>
+            {
+musicData.filter(searchingFor(term)).map(musicInfo=>
+<div>
+  <h1>{musicInfo.titles}</h1>
+</div>)
+            }
+            </div>
     )
   }
 }
@@ -82,15 +123,6 @@ class AlbumSuggestions extends React.Component {
 
 
 handleleftChange = () => {
-  this.setState({
-    query: this.search.value
-  }, () => {
-    if (this.state.query && this.state.query.length > 1) {
-      if (this.state.query.length % 2 === 0) {
-        this.getInfo()
-      }
-    } 
-  })
 }
 
   render(){
