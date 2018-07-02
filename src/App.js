@@ -1,34 +1,48 @@
 import React, { Component } from 'react';
-import { ReactiveBase, CategorySearch, SingleRange, ResultCard } from '@appbaseio/reactivesearch';
+import { ReactiveBase, CategorySearch, SingleRange, RangeSlider, ResultCard } from '@appbaseio/reactivesearch';
+import './App.css';
 
 class App extends Component {
   render() {
     return (
         <ReactiveBase
-        app="africanMusic"
-        credentials="M6dse7QG5:7b409605-7f19-4c7d-a8fc-7677dfeb7b47">
+        app="bands"
+        type="_doc"
+        url="https://amp.a-magdy.me">
           <div>
             <div >
               <CategorySearch
                 componentId="searchbox"
-                dataField="name"
+                dataField={["titles", "artists"]}
                 categoryField="titles.raw"
                 placeholder="Search for music"
                 style={{
                   padding: "5px",
                   "marginTop": "100px"
                 }}
+                innerClass={{
+                  input: 'text-input'
+              }}
+              className="CategorySearch"
               />
-              <SingleRange
+              <RangeSlider
                 componentId="yearfilter"
                 dataField="publishedYear"
-                data={[
-                  { "label": "All"},
-                  {"label": "Title"},
-                  {"label": "Artist"},
-                  {"label": "Year"},
-                ]}
-                defaultSelected="All"
+                title="Year"
+                filterLabel="Year"
+                showHistogram={true}
+                range={{
+                  start: 1945,
+                  end: 2018
+                }}
+                rangeLabels={{
+                  start: "1945",
+                  end: "2018"
+                }}
+                interval={1}
+                react={{
+                  and: ["searchbox"]
+                }}
                 style={{
                   padding: "5px",
                   "marginTop": "10px"
@@ -42,18 +56,33 @@ class App extends Component {
               from={0}
               size={6}
               pagination={true}
+              pages={3}
               react={{
                 and: ["searchbox", "yearfilter"]
               }}
               onData={(res) => {
+                console.log(res.publishedYear);
                 return {
-                  image: "https://www.enterprise.com/content/dam/global-vehicle-images/cars/FORD_FOCU_2012-1.png",
-                  title: res.titles,
-                  description: res.artists + " " + "★".repeat(res.location)
+                  image: "https://raw.githubusercontent.com/dpfernandes/class04-final-project/master/ama1.png",
+                  title: 'Song Title: '+res.titles,
+                  description: (
+                    <div>
+                      <p>
+                        {'Description: '+res.artists + " " + "★".repeat(res.location)}
+                      </p>
+                        <p>{'Pub Year: '+res.publishedYear}</p>
+                    </div>
+                ),
+                  
+                containerProps: {
+                  onMouseEnter: () => console.log('😁'),
+                  onMouseLeave: () => console.log('🙀')
+                } 
+                  
+
                 }
               }}
               style={{
-                "width": "60%",
                 "textAlign": "center"
               }}
             />
