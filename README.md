@@ -22,15 +22,17 @@ Note that the project is split into two sub-projects. One for the [client](/clie
 
 ##### 1A: When I want to find a specific music I want to be able to search for specific music title;
 
-##### 1B: When I want to find a specific artist I want to be able to search for specific artist - be aware that there are albums that have more than 1 album;
+##### 1B: When I want to find a specific artist I want to be able to search for specific artist - be aware that there are albums that have more than 1 artist;
 
 ##### 1C: When I want to find a music from a specific year I want to be able to search for specific year.
 
 ###### Build an UI using the mockup below as a guideline for:
 
-      > A List View story of what you can search on the DB - use storybook and build the components for the view;
+      > A List View story of what you can search on the DB - use storybook and build the components 
+      for the view;
 
-      > A Search View - use storybook and build the components for the view. Use the data on the JSON file to demo;
+      > A Search View - use storybook and build the components for the view. Use the data on the 
+      JSON file to demo;
       
 ![mockupSearchView](https://github.com/dpfernandes/class04-final-project/blob/master/mockupSearchView.png)
     
@@ -38,11 +40,13 @@ Note that the project is split into two sub-projects. One for the [client](/clie
 
 ![mockupSearchResult](https://github.com/dpfernandes/class04-final-project/blob/master/mockupSearchResult.png)      
 
-      > Detail View for the Album with the info about the about Album, list of the titles with Player for each on of them;
+      > Detail View for the Album with the info about the about Album, list of the titles with Player 
+      for each on of them;
 
 ![mockupDetailView](https://github.com/dpfernandes/class04-final-project/blob/master/mockupDetailView.png)     
 
-      > A Sort Search results based on Alphabetic order by Artist or by song Title and by Chronologic order. This component should show up in every list result view.
+      > A Sort Search results based on Alphabetic order by Artist or by song Title and by Chronologic order. 
+      This component should show up in every list result view.
     
 
 ###### Build a Database Diagram based on the JSON file. Use the example below:
@@ -66,7 +70,8 @@ https://github.com/katsisaac50/myreactivesearch
 
 ![apiEndPoints](https://github.com/dpfernandes/class04-final-project/blob/master/apiEndpoints.png)
 
-You can use AMA Instagram to get some images and add some real content to your project. Check AMA Instagram here: https://www.instagram.com/reboot.africa/
+You can use AMA Instagram to get some images and add some real content to your project. 
+Check AMA Instagram here: https://www.instagram.com/reboot.africa/
 
 ### Second iteration
 
