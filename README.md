@@ -20,14 +20,11 @@ Note that the project is split into two sub-projects. One for the [client](/clie
 
 ### First iteration
 
-##### 1A: When I want to find a specific music I want to be able to search for specific
- music title;
+##### 1A: When I want to find a specific music I want to be able to search for specific music title;
 
-##### 1B: When I want to find a specific artist I want to be able to search for specific
- artist - be aware that there are albums that have more than 1 artist;
+##### 1B: When I want to find a specific artist I want to be able to search for specific artist - be aware that there are albums that have more than 1 artist;
 
-##### 1C: When I want to find a music from a specific year I want to be able to search 
-for specific year.
+##### 1C: When I want to find a music from a specific year I want to be able to search for specific year.
 
 ###### Build an UI using the mockup below as a guideline for:
 
