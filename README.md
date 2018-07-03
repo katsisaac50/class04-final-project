@@ -22,7 +22,7 @@ Note that the project is split into two sub-projects. One for the [client](/clie
 
 ##### 1A: When I want to find a specific music I want to be able to search for specific music title;
 
-##### 1B: When I want to find a specific artist I want to be able to search for specific artist - be aware that there are albums that have more than 1 artist;
+##### 1B: When I want to find a specific artist I want to be able to search for specific artist - be aware that there are albums that have more than one artist;
 
 ##### 1C: When I want to find a music from a specific year I want to be able to search for specific year.
 
@@ -40,13 +40,12 @@ Note that the project is split into two sub-projects. One for the [client](/clie
 
 ![mockupSearchResult](https://github.com/dpfernandes/class04-final-project/blob/master/mockupSearchResult.png)      
 
-      > Detail View for the Album with the info about the about Album, list of the titles with Player for
-       each on of them;
+      > Detail View for the Album with the info it's info, list of the titles with Player for
+       each one of them;
 
 ![mockupDetailView](https://github.com/dpfernandes/class04-final-project/blob/master/mockupDetailView.png)     
 
-      > A Sort Search results based on Alphabetic order by Artist or by song Title and by 
-      Chronologic order. This component should show up in every list result view.
+      > A Sort Search results based on Alphabetic order by Artist or by song Title and by Chronologic order. This component should show up in every list result view.
     
 
 ###### Build a Database Diagram based on the JSON file. Use the example below:
@@ -54,7 +53,7 @@ Note that the project is split into two sub-projects. One for the [client](/clie
 ![dbDiagram](https://github.com/dpfernandes/class04-final-project/blob/master/dbDiagram.png)
 
 
-Please check the JSON file in: 
+###### Please check the JSON file in: 
 https://github.com/hackyourfuture-cph/class04-final-project/blob/master/database-24fdbd.json
 
 
