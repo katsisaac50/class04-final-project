@@ -28,11 +28,9 @@ Note that the project is split into two sub-projects. One for the [client](/clie
 
 ###### Build an UI using the mockup below as a guideline for:
 
-      > A List View story of what you can search on the DB - use storybook and build the components 
-      for the view;
+      > A List View story of what you can search on the DB - use storybook and build the components for the view;
 
-      > A Search View - use storybook and build the components for the view. Use the data on the 
-      JSON file to demo;
+      > A Search View - use storybook and build the components for the view. Use the data on the JSON file to demo;
       
 ![mockupSearchView](https://github.com/dpfernandes/class04-final-project/blob/master/mockupSearchView.png)
     
