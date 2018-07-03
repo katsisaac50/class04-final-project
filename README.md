@@ -1,7 +1,7 @@
 # CLASS04 - FINAL PROJECT
 Main repository for the final project for Class 04
 
-Work Agreement -(https://github.com/dpfernandes/class04-final-project/blob/master/WorkingAgreement.md)
+Work Agreement -(https://github.com/hackyourfuture-cph/class04-final-project/blob/master/WorkingAgreement.md)
 
 “Working agreement are guidelines that define how groups want to work together, and what they want in the working environment and from each other to feel safe and free to learn, explore and discover.”
 
@@ -19,27 +19,51 @@ Note that the project is split into two sub-projects. One for the [client](/clie
 
 ##### 1A: When I want to find a specific music I want to be able to search for specific music title;
 
-##### 1B: When I want to find a specific artist I want to be able to search for specific artist;
+##### 1B: When I want to find a specific artist I want to be able to search for specific artist - be aware that there are albums that have more than 1 album;
 
-##### 1C: When I want to find a specific music genre I want to be able to search for specific year.
+##### 1C: When I want to find a music from a specific year I want to be able to search for specific year.
 
 ###### Build an UI using the mockup below as a guideline for:
 
-     > A List View story of what you can search on the DB - use storybook and build the 
-    components for the view;
+      > A List View story of what you can search on the DB - use storybook and build the components for the view;
 
-     > A Search View - use storybook and build the components for the view. Use the data 
-     on the JSON file to demo.
+      > A Search View - use storybook and build the components for the view. Use the data on the JSON file to demo;
+      
+![mockupSearchView](https://github.com/dpfernandes/class04-final-project/blob/master/mockupSearchView.png)
+    
+      > Search Result View for the Artist with the info about the about Albums that are related to him/her;
 
-###### Build a DB model based on the JSON file.
+![mockupSearchResult](https://github.com/dpfernandes/class04-final-project/blob/master/mockupSearchResult.png)      
 
-###### Build an API to connect JSON file with UI.
+      > Detail View for the Album with the info about the about Album, list of the titles with Player for each on of them;
 
-![Mockup01](https://github.com/dpfernandes/class04-final-project/blob/master/mockup01.png)
+![mockupDetailView](https://github.com/dpfernandes/class04-final-project/blob/master/mockupDetailView.png)     
+
+      > A Sort Search results based on Alphabetic order by Artist or by song Title and by Chronologic order. This component should show up in every list result view.
+    
+
+###### Build a Database Diagram based on the JSON file. Use the example below:
+
+![dbDiagram](https://github.com/dpfernandes/class04-final-project/blob/master/dbDiagram.png)
 
 
-Please check the JSON file in https://github.com/dpfernandes/class04-final-project/blob/master/database-24fdbd.json
+Please check the JSON file in: 
+https://github.com/hackyourfuture-cph/class04-final-project/blob/master/database-24fdbd.json
 
+
+###### Implement Elastic Search using Isaac Project as an example and Ahmed’s endpoint:
+
+https://github.com/katsisaac50/myreactivesearch
+
+###### Make a Sitemap with the different Pages using the example below:
+
+![sitemapExample](https://github.com/dpfernandes/class04-final-project/blob/master/sitemapExample.png)
+
+###### Make a diagram of the API endpoints using the example below:
+
+![apiEndPoints](https://github.com/dpfernandes/class04-final-project/blob/master/apiEndPoints.png)
+
+You can use AMA Instagram to get some images and add some real content to your project. Check AMA Instagram here: https://www.instagram.com/reboot.africa/
 
 ### Second iteration
 
