@@ -64,7 +64,7 @@ https://github.com/katsisaac50/myreactivesearch
 
 ###### Make a diagram of the API endpoints using the example below:
 
-![apiEndPoints](https://github.com/dpfernandes/class04-final-project/blob/master/apiEndPoints.png)
+![apiEndPoints](https://github.com/dpfernandes/class04-final-project/blob/master/apiEndpoints.png)
 
 You can use AMA Instagram to get some images and add some real content to your project. Check AMA Instagram here: https://www.instagram.com/reboot.africa/
 
