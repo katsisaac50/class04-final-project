@@ -1,6 +1,8 @@
 # CLASS04 - FINAL PROJECT
 Main repository for the final project for Class 04
 
+![Archiv für die Musik Afrikas - RE:BOOT](https://github.com/HackYourFuture-CPH/class04-final-project/blob/master/ama-headline-logo.png)
+
 ## Work Agreement
 (https://github.com/dpfernandes/class04-final-project/blob/master/WorkingAgreement.md)
 
