@@ -40,13 +40,11 @@ Note that the project is split into two sub-projects. One for the [client](/clie
 
 ![mockupSearchResult](https://github.com/dpfernandes/class04-final-project/blob/master/mockupSearchResult.png)      
 
-      > Detail View for the Album with the info about the about Album, list of the titles with Player 
-      for each on of them;
+      > Detail View for the Album with the info about the about Album, list of the titles with Player for each on of them;
 
 ![mockupDetailView](https://github.com/dpfernandes/class04-final-project/blob/master/mockupDetailView.png)     
 
-      > A Sort Search results based on Alphabetic order by Artist or by song Title and by Chronologic order. 
-      This component should show up in every list result view.
+      > A Sort Search results based on Alphabetic order by Artist or by song Title and by Chronologic order. This component should show up in every list result view.
     
 
 ###### Build a Database Diagram based on the JSON file. Use the example below:
