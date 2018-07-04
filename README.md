@@ -1,14 +1,15 @@
 # CLASS04 - FINAL PROJECT
 Main repository for the final project for Class 04
 
-![amaHeadlineLogo](https://github.com/hackyourfuture-cph/class04-final-project/blob/master/ama-headline-logo.png)
+![amaHeadlineLogo](https://github.com/HackYourFuture-CPH/class04-final-project/blob/master/ama-headline-logo.png)
 
 
-Work Agreement -(https://github.com/hackyourfuture-cph/class04-final-project/blob/master/WorkingAgreement.md)
+## Work Agreement
+(https://github.com/dpfernandes/class04-final-project/blob/master/WorkingAgreement.md)
 
-“Working agreement are guidelines that define how groups want to work together, and what they want in the working environment and from each other to feel safe and free to learn, explore and discover.”
+_“Working agreements are guidelines that define how groups want to work together, and what they want in the working environment and from each other to feel safe and free to learn, explore and discover.”_
 
-Read the agreement and live up to it. Your project and team work has to have rules so you develop and communicate in the same way and follow up eachothers work! A finished project is only a sucesss if you did it together and learned together.
+Read the agreement and live up to it. Your project and team work has to have rules so you develop and communicate in the same way and follow up on each others work! **A finished project is only a sucesss if you did it together and learned together.**
 
 Feel free to review the points and contribute/pull request with new ones.
 
