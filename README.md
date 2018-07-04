@@ -4,7 +4,7 @@ Main repository for the final project for Class 04
 ![Archiv für die Musik Afrikas - RE:BOOT](https://github.com/HackYourFuture-CPH/class04-final-project/blob/master/ama-headline-logo.png)
 
 ## Work Agreement
-(https://github.com/dpfernandes/class04-final-project/blob/master/WorkingAgreement.md)
+(https://github.com/HackYourFuture-CPH/class04-final-project/blob/master/WorkingAgreement.md)
 
 _“Working agreements are guidelines that define how groups want to work together, and what they want in the working environment and from each other to feel safe and free to learn, explore and discover.”_
 
@@ -41,7 +41,7 @@ Note that the project is split into two sub-projects. One for the [client](/clie
 ![Mockup01](https://github.com/dpfernandes/class04-final-project/blob/master/mockup01.png)
 
 
-Please check the JSON file in https://github.com/dpfernandes/class04-final-project/blob/master/database-24fdbd.json
+Please check the JSON file in https://github.com/HackYourFuture-CPH/class04-final-project/blob/master/database-24fdbd.json
 
 
 ### Second iteration
