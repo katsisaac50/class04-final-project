@@ -3,3 +3,22 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+.player-wrapper{
+  margin: 10px;
+  width: 10%;
+}
+.CategorySearch .text-input {
+  width:40%;
+box-sizing:border-box;
+border:2px solid#ccc;
+border-radius: 30px;
+font-size: 20px;
+}
+
+.ResultCard .itemcontainer {
+  max-width:22.5%;
+box-sizing:border-box;
+border:2px solid#ccc;
+border-radius: 10px;
+font-size: 20px;
+}

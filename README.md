@@ -1,7 +1,15 @@
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
+<<<<<<< HEAD
 Below you will find some information on how to perform common tasks.<br>
 You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
+=======
+![amaHeadlineLogo](https://github.com/HackYourFuture-CPH/class04-final-project/blob/master/ama-headline-logo.png)
+
+
+## Work Agreement
+(https://github.com/dpfernandes/class04-final-project/blob/master/WorkingAgreement.md)
+>>>>>>> f40213ecba5a93c7718c3e08e335bf12ad88a51f
 
 ## Table of Contents
 
@@ -116,12 +124,19 @@ When you run `create-react-app`, it always creates the project with the latest v
 
 To update an existing project to a new version of `react-scripts`, [open the changelog](https://github.com/facebookincubator/create-react-app/blob/master/CHANGELOG.md), find the version you’re currently on (check `package.json` in this folder if you’re not sure), and apply the migration instructions for the newer versions.
 
+<<<<<<< HEAD
 In most cases bumping the `react-scripts` version in `package.json` and running `npm install` in this folder should be enough, but it’s good to consult the [changelog](https://github.com/facebookincubator/create-react-app/blob/master/CHANGELOG.md) for potential breaking changes.
 
 We commit to keeping the breaking changes minimal so you can upgrade `react-scripts` painlessly.
+=======
+##### 1B: When I want to find a specific artist I want to be able to search for specific artist - be aware that there are albums that have more than one artist;
+
+##### 1C: When I want to find a music from a specific year I want to be able to search for specific year.
+>>>>>>> f40213ecba5a93c7718c3e08e335bf12ad88a51f
 
 ## Sending Feedback
 
+<<<<<<< HEAD
 We are always open to [your feedback](https://github.com/facebookincubator/create-react-app/issues).
 
 ## Folder Structure
@@ -154,6 +169,52 @@ You can delete or rename the other files.
 
 You may create subdirectories inside `src`. For faster rebuilds, only files inside `src` are processed by Webpack.<br>
 You need to **put any JS and CSS files inside `src`**, otherwise Webpack won’t see them.
+=======
+      > A List View story of what you can search on the DB - use storybook and build the components 
+      for the view;
+
+      > A Search View - use storybook and build the components for the view. Use the data on the 
+      JSON file to demo;
+      
+![mockupSearchView](https://github.com/dpfernandes/class04-final-project/blob/master/mockupSearchView.png)
+    
+      > Search Result View for the Artist with the info about the about Albums that are related to him/her;
+
+![mockupSearchResult](https://github.com/dpfernandes/class04-final-project/blob/master/mockupSearchResult.png)      
+
+      > Detail View for the Album with the info it's info, list of the titles with a Player for each
+       one of them;
+
+![mockupDetailView](https://github.com/dpfernandes/class04-final-project/blob/master/mockupDetailView.png)     
+
+      > A Sort Search results based on Alphabetic order by Artist or by song Title and by Chronologic order. 
+      This component should show up in every list result view.
+    
+
+###### Build a Database Diagram based on the JSON file. Use the example below:
+
+![dbDiagram](https://github.com/dpfernandes/class04-final-project/blob/master/dbDiagram.png)
+
+
+###### Please check the JSON file in: 
+https://github.com/hackyourfuture-cph/class04-final-project/blob/master/database-24fdbd.json
+
+
+###### Implement Elastic Search using Isaac Project as an example and Ahmed’s endpoint:
+
+https://github.com/katsisaac50/myreactivesearch
+
+###### Make a Sitemap with the different Pages using the example below:
+
+![sitemapExample](https://github.com/dpfernandes/class04-final-project/blob/master/sitemapExample.png)
+
+###### Make a diagram of the API endpoints using the example below:
+
+![apiEndPoints](https://github.com/dpfernandes/class04-final-project/blob/master/apiEndpoints.png)
+
+You can use AMA Instagram to get some images and add some real content to your project. 
+Check AMA Instagram here: https://www.instagram.com/reboot.africa/
+>>>>>>> f40213ecba5a93c7718c3e08e335bf12ad88a51f
 
 Only files inside `public` can be used from `public/index.html`.<br>
 Read instructions below for using assets from JavaScript and HTML.
