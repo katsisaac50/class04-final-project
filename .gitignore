@@ -19,3 +19,10 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+/ama-headline-logo.png
+/apiEndpoints.png
+/dbDiagram.png
+/mockupDetailView.png
+/mockupSearchResult.png
+/mockupSearchView.png
+/sitemapExample.png
