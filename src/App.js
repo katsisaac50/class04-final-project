@@ -45,7 +45,7 @@ class App extends Component {
             size={8}
             pagination={true}
             pages={3}
-            react={{ and: ['searchbox', 'yearfilter'] }}
+            react={{ and: ['searchbox', 'yearfilter', 'MusicSensor'] }}
             onData={(res) => {
                       console.log(res.publishedYear)
                       return {
