@@ -1,19 +1,20 @@
 import React, { Component } from 'react'
-import ReactDOM from 'react-dom'
+import Header from './Header'
+import Footer from './Footer'
 
 import { ReactiveBase, CategorySearch, RangeSlider, ResultCard, SingleDropdownList, SelectedFilters } from '@appbaseio/reactivesearch'
-
 import './index.css'
 
 class App extends Component {
   render () {
     return (
+      
       <ReactiveBase app='bands' type='_doc' url='https://amp.a-magdy.me'>
         <div className='row'>
           <div className='col'>
           </div>
           <div>
-            <SelectedFilters />
+            <Header />
             <CategorySearch
               componentId='searchbox'
               dataField={['titles', 'artists']}
@@ -32,7 +33,7 @@ class App extends Component {
               showCount={true}
               placeholder='Search Music'
               selectAllLabel='All Years'
-              react={{ and: ['CategoryFilter', 'SearchFilter'] }}
+              react={{ and: ['searchbox'] }}
               showFilter={true}
               filterLabel='Year'
               URLParams={false} />
@@ -84,6 +85,7 @@ class App extends Component {
             className='ResultCard'
             style={{ 'textAlign': 'center' }} />
         </div>
+        <Footer/>
       </ReactiveBase>
     )
   }
