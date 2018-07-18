@@ -5,6 +5,7 @@
   "dependencies": {
     "@appbaseio/reactivesearch": "^2.6.8",
     "gh-pages": "^1.2.0",
+    "npm-watch": "^0.3.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-scripts": "1.1.4"
