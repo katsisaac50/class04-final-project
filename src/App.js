@@ -8,21 +8,28 @@ import './index.css'
 class App extends Component {
   render () {
     return (
-      
+
       <ReactiveBase app='bands' type='_doc' url='https://amp.a-magdy.me'>
         <div className='row'>
           <div className='col'>
           </div>
           <div>
             <Header />
-            <CategorySearch
+            <div class="topnav">
+  <a class="active" href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+  {/* <input type="text" placeholder="Search.."/> */}
+  <CategorySearch
               componentId='searchbox'
               dataField={['titles', 'artists']}
               categoryField='titles.raw'
               placeholder='Search for music'
-              style={{ padding: '5px', 'marginTop': '100px' }}
-              innerClass={{ input: 'text-input' }}
+              style={{ padding: '5px', 'marginTop': '2px' }}
+              innerClass={{ input: 'text-input'}}
               className='CategorySearch' />
+</div>
+            
             <SingleDropdownList
               componentId='MusicSensor'
               dataField='publishedYear.raw'
@@ -62,8 +69,9 @@ class App extends Component {
                           </p>
                           <div className='player-wrapper'>
                             <label for='t-rex-roar'>
-                              <strong>Preview</strong>
+                              <strong id='myDIV'></strong>
                             </label>
+                            
                             <br/>
                             <audio controls src='http://soundbible.com/mp3/Tyrannosaurus%20Rex%20Roar-SoundBible.com-807702404.mp3'>
                               Your browser does not support the <code>audio</code> element.
@@ -74,8 +82,14 @@ class App extends Component {
                         ),
                     
                         containerProps: {
-                          onMouseEnter: () => console.log('😁'),
-                          onMouseLeave: () => console.log('🙀')
+                          onMouseEnter: () => {
+                            var x = document.getElementById('myDIV')
+                              x.innerHTML = 'Details'
+                            },
+                          onMouseLeave: (event) =>{
+                            var x = document.getElementById('myDIV')
+                            x.innerHTML = ''}
+
                         }
                     
                     
