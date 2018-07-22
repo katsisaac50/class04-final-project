@@ -15,20 +15,22 @@ class App extends Component {
           </div>
           <div>
             <Header />
-            <div class="topnav">
-  <a class="active" href="#home">Home</a>
-  <a href="#about">About</a>
-  <a href="#contact">Contact</a>
-  {/* <input type="text" placeholder="Search.."/> */}
-  <CategorySearch
-              componentId='searchbox'
-              dataField={['titles', 'artists']}
-              categoryField='titles.raw'
-              placeholder='Search for music'
-              style={{ padding: '5px', 'marginTop': '2px' }}
-              innerClass={{ input: 'text-input'}}
-              className='CategorySearch' />
-</div>
+            <div class='topnav'>
+              <a class='active' href='#home'>Home</a>
+              <a href='#about'>About</a>
+              <a href='#contact'>Contact</a>
+              {/* <input type="text" placeholder="Search.."/> */}
+              <div style={{ display: "flex", flexDirection: "column", width: "40%" }}>
+              <CategorySearch
+                componentId='searchbox'
+                dataField={['titles', 'artists']}
+                categoryField='titles.raw'
+                placeholder='Search for music'
+                style={{ padding: '5px', 'marginTop': '2px' }}
+                innerClass={{ input: 'text-input'}}
+                className='CategorySearch' />
+                </div>
+            </div>
             
             <SingleDropdownList
               componentId='MusicSensor'
@@ -71,7 +73,6 @@ class App extends Component {
                             <label for='t-rex-roar'>
                               <strong id='myDIV'></strong>
                             </label>
-                            
                             <br/>
                             <audio controls src='http://soundbible.com/mp3/Tyrannosaurus%20Rex%20Roar-SoundBible.com-807702404.mp3'>
                               Your browser does not support the <code>audio</code> element.
@@ -84,12 +85,12 @@ class App extends Component {
                         containerProps: {
                           onMouseEnter: () => {
                             var x = document.getElementById('myDIV')
-                              x.innerHTML = 'Details'
-                            },
-                          onMouseLeave: (event) =>{
+                            x.innerHTML = 'Details'
+                          },
+                          onMouseLeave: (event) => {
                             var x = document.getElementById('myDIV')
                             x.innerHTML = ''}
-
+                    
                         }
                     
                     
