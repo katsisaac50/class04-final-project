@@ -4,11 +4,15 @@
   "private": true,
   "dependencies": {
     "@appbaseio/reactivesearch": "^2.6.8",
+    "axios": "^0.18.0",
     "gh-pages": "^1.2.0",
     "npm-watch": "^0.3.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
-    "react-scripts": "1.1.4"
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "1.1.4",
+    "semantic-ui-css": "^2.3.3",
+    "semantic-ui-react": "^0.82.1"
   },
   "scripts": {
     "start": "react-scripts start",
