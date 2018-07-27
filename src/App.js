@@ -1,12 +1,19 @@
 import React, { Component } from 'react'
 import Header from './Header'
 import Footer from './Footer'
+import Nav from './Container/Nav';
+
 
 import { ReactiveBase, CategorySearch, RangeSlider, ResultCard, SingleDropdownList, SelectedFilters } from '@appbaseio/reactivesearch'
 import './index.css'
 
 class App extends Component {
+
+  OpenDetail =(id) =>{
+    window.location.href=`/AlbumList/${id}`;
+}
   render () {
+    
     return (
 
       <ReactiveBase app='bands' type='_doc' url='https://amp.a-magdy.me'>
@@ -14,28 +21,23 @@ class App extends Component {
           <div className='col'>
           </div>
           <div>
+            <Nav/>
             <Header />
-            <div class='topnav'>
-              <a class='active' href='#home'>Home</a>
-              <a href='#about'>About</a>
-              <a href='#contact'>Contact</a>
-              {/* <input type="text" placeholder="Search.."/> */}
-              <div style={{ display: "flex", flexDirection: "column", width: "40%" }}>
-              <CategorySearch
+            
+            <div class='search'>
+            
+            <CategorySearch
                 componentId='searchbox'
                 dataField={['titles', 'artists']}
                 categoryField='titles.raw'
                 placeholder='Search for music'
-                style={{ padding: '5px', 'marginTop': '2px' }}
+                style={{ padding: '5px',  'marginTop': '2px','width':'35%', 'float':'right'}}
                 innerClass={{ input: 'text-input'}}
                 className='CategorySearch' />
-                </div>
-            </div>
-            
+      
             <SingleDropdownList
               componentId='MusicSensor'
               dataField='publishedYear.raw'
-              title='PubYear'
               size={100}
               sortBy='asc'
               defaultSelected='1950'
@@ -45,7 +47,11 @@ class App extends Component {
               react={{ and: ['searchbox'] }}
               showFilter={true}
               filterLabel='Year'
-              URLParams={false} />
+              style={{ padding: '5px', 'marginTop': '2px','marginRight': '5px','width':'50%','borderRadius': '80px'}}
+              URLParams={false} 
+              innerClass={{ select: 'text-input'}}
+              />
+              </div>
           </div>
           <ResultCard
             componentId='result'
@@ -69,30 +75,22 @@ class App extends Component {
                           <p>
                             {'Pub Year: ' + res.publishedYear}
                           </p>
-                          <div className='player-wrapper'>
-                            <label for='t-rex-roar'>
-                              <strong id='myDIV'></strong>
-                            </label>
-                            <br/>
-                            <audio controls src='http://soundbible.com/mp3/Tyrannosaurus%20Rex%20Roar-SoundBible.com-807702404.mp3'>
-                              Your browser does not support the <code>audio</code> element.
-                            </audio>
-                          </div>
+                         {/* <AlbumPreview
+                          meta={res}                            
+                      /> */}
                         </div>
-                    
                         ),
                     
                         containerProps: {
-                          onMouseEnter: () => {
-                            var x = document.getElementById('myDIV')
-                            x.innerHTML = 'Details'
-                          },
-                          onMouseLeave: (event) => {
-                            var x = document.getElementById('myDIV')
-                            x.innerHTML = ''}
-                    
-                        }
-                    
+                          onClick: ()=>this.OpenDetail(res.id),
+                          // onMouseEnter: () => {
+                          //   var x = document.getElementById('myDIV')
+                          //   x.innerHTML = 'Details'
+                          // },
+                          // onMouseLeave: (event) => {
+                          //   var x = document.getElementById('myDIV')
+                          //   x.innerHTML = ''}
+                        },
                     
                       }
                     }}
@@ -103,6 +101,7 @@ class App extends Component {
         <Footer/>
       </ReactiveBase>
     )
+    
   }
 }
 
