@@ -80,12 +80,13 @@ header .banner-text h3 {
 }
 
 .topnav {
-  /* overflow: hidden; */
+  
   background-color: #D0ADC5;
   position: fixed;
-  top: 0;
+    top: 0;
   width: 100%;
-}
+  z-index: 1;
+} 
 
 .topnav a {
   float: left;
@@ -116,6 +117,12 @@ header .banner-text h3 {
   /* float: right; */
   border: none;
 } 
+.search {
+  /* overflow: hidden; */
+  background-color: #D0ADC5;
+  width: 100%;
+  z-index: 1;
+}
 
 .inputplace{border-radius: 30px;
 }
