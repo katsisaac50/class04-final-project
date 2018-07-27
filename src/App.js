@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import Header from './Header'
 import Footer from './Footer'
 import Nav from './Container/Nav';
+import ScrollButton from './Container/scroll';
+
 
 
 import { ReactiveBase, CategorySearch, RangeSlider, ResultCard, SingleDropdownList, SelectedFilters } from '@appbaseio/reactivesearch'
@@ -23,7 +25,6 @@ class App extends Component {
           <div>
             <Nav/>
             <Header />
-            
             <div class='search'>
             
             <CategorySearch
@@ -49,7 +50,7 @@ class App extends Component {
               filterLabel='Year'
               style={{ padding: '5px', 'marginTop': '2px','marginRight': '5px','width':'50%','borderRadius': '80px'}}
               URLParams={false} 
-              innerClass={{ select: 'text-input'}}
+              innerClass={{ icon: 'text-input'}}
               />
               </div>
           </div>
@@ -98,6 +99,7 @@ class App extends Component {
             className='ResultCard'
             style={{ 'textAlign': 'center' }} />
         </div>
+        <ScrollButton scrollStepInPx="50" delayInMs="16.66"/>
         <Footer/>
       </ReactiveBase>
     )
