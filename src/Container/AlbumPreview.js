@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Nav from '../Container/Nav';
 import AppHeader from '../Header';
 import AppFooter from '../Footer';
 import MusicList from '../MusicList';
@@ -43,10 +44,12 @@ class AlbumPreview extends Component {
         
         return (
             <div>
+                {/* <div ><div ><a >Home</a><a >Work</a><a >Company</a><a >Careers</a><div ><a  role="button">Log in</a><a  role="button">Sign Up</a></div></div></div> */}
                 <Grid style={{backgroundColor: 'rgba(0,0,0, 0.8)'}}>
                     <Grid.Row>
                         <Grid.Column computer={16} tablet={16} mobile={16}>
-                            <AppHeader/>
+                        <Nav/>
+                        <AppHeader/>
                         </Grid.Column>
                     </Grid.Row>
                 </Grid>
@@ -59,17 +62,6 @@ class AlbumPreview extends Component {
                             <Container>
                                 <Header as="h3"> {album.artists} </Header>
                                 <Image src="https://raw.githubusercontent.com/dpfernandes/class04-final-project/master/ama1.png"/>
-                                
-                                <div className='player-wrapper'>
-                            <label for='t-rex-roar'>
-                              <strong id='myDIV'></strong>
-                            </label>
-                            <br/>
-                            <audio className='player-wrapper' controls src='http://soundbible.com/mp3/Tyrannosaurus%20Rex%20Roar-SoundBible.com-807702404.mp3'>
-                              Your browser does not support the <code>audio</code> element.
-                            </audio>
-                          </div>
-
                                 <div style={{borderBottom: "solid grey 1px", padding: "10px 0"}}>
                                     <List divided style={{borderBottom: "solid grey 1px" }}>
                                         <List.Item style={{padding: "10px 0"}}>
@@ -82,11 +74,10 @@ class AlbumPreview extends Component {
                                     </List>
                                    { album.keywords && album.keywords.map(keyword =><Label 
                                                                                         key={album.keywords.indexOf(keyword)}
-                                                                                        style={{margin:"5px"}}
-                                                                                    >
+                                                                                        style={{margin:"5px"}}>
                                                                                         {keyword}
                                                                                     </Label> 
-                                                                        )} 
+                                    )} 
                                 </div>
                             </Container>
                         </Grid.Column>
