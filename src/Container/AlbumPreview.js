@@ -7,6 +7,8 @@ import MusicPlay from '../MusicPlay';
 import axios from 'axios';
 import { withRouter } from 'react-router';
 import { Grid, Header, Container, Image, Label, List } from 'semantic-ui-react';
+import ScrollButton from '../Container/scroll';
+
 
 class AlbumPreview extends Component {
 
@@ -114,6 +116,8 @@ class AlbumPreview extends Component {
                         closePlayer={()=>this.setState({playMusic: false})}
                     />
                 }
+                        <ScrollButton scrollStepInPx="50" delayInMs="16.66"/>
+
                 <AppFooter/> 
 
             </div>
