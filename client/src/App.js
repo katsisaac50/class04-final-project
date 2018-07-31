@@ -29,7 +29,7 @@ class App extends Component {
             
             <CategorySearch
                 componentId='searchbox'
-                dataField={['titles', 'artists']}
+                dataField={['titles', 'artists','keywords']}
                 categoryField='titles.raw'
                 placeholder='Search for music'
                 style={{ padding: '5px',  'marginTop': '2px','width':'35%', 'float':'right'}}

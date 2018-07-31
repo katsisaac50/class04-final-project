@@ -1,16 +1,22 @@
 {
-  "name": "myreactiveseacrh",
+  "name": "client",
   "version": "0.1.0",
   "private": true,
+"proxy": "http://localhost:3000",
   "dependencies": {
     "@appbaseio/reactivesearch": "^2.6.8",
+    "ajv-keywords": "^3.2.0",
     "axios": "^0.18.0",
+    "exenv": "^1.2.2",
     "gh-pages": "^1.2.0",
+    "knex": "^0.15.2",
+    "mysql": "^2.16.0",
     "npm-watch": "^0.3.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.4",
+    "react-scroll-up-button": "^1.6.0",
     "semantic-ui-css": "^2.3.3",
     "semantic-ui-react": "^0.82.1"
   },
