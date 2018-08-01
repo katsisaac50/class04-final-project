@@ -16,5 +16,5 @@
     "eject": "react-scripts eject",
     "deploy": "npm run build ; gh-pages -d build"
   },
-  "homepage": "https://katsisaac50.github.io/myreactivesearch/"
+  "homepage": "https://katsisaac50.github.io/class04-final-project/"
 }
