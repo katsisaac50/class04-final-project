@@ -8,7 +8,7 @@
 
 # production
 /build
-
+static
 # misc
 .DS_Store
 .env.local
@@ -25,4 +25,14 @@ yarn-error.log*
 /mockupDetailView.png
 /mockupSearchResult.png
 /mockupSearchView.png
+<<<<<<< HEAD
+sitemapExample.png
+=======
 /sitemapExample.png
+>>>>>>> 17a270b1b1763b73ab7e1adade9d13e83557946e
+.vscode/tasks.json
+src/index.css.map
+static/js/main.a5b1af24.js
+static/js/main.a5b1af24.js.map
+.vscode/launch.json
+.vscode/launch.json

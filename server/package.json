@@ -1,0 +1,20 @@
+{
+  "name": "server",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon ./bin/www",
+    "test": "tap ./test/*.js"
+  },
+  "dependencies": {
+    "debug": "~2.6.9",
+    "express": "~4.16.0",
+    "morgan": "~1.9.0",
+    "mysql": "^2.15.0"
+  },
+  "devDependencies": {
+    "knex": "^0.14.6",
+    "nodemon": "^1.17.3",
+    "tap": "^11.1.4"
+  }
+}
