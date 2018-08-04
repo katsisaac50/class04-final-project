@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import App from './App';
+import Home from './Home';
 import AlbumPreview from './Container/AlbumPreview';
 import { Route } from "react-router-dom";
 import 'semantic-ui-css/semantic.min.css';
@@ -9,7 +9,7 @@ class Route1 extends Component {
     return (
       
       <div>
-        <Route exact path = "/" component ={App}/>
+        <Route exact path = "/" component ={Home}/>
         <Route  exact path="/AlbumList" component = {AlbumPreview} />
         <Route   path="/AlbumList/:id" component = {AlbumPreview} />
       </div>

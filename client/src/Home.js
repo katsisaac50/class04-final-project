@@ -9,7 +9,7 @@ import ScrollButton from './Container/scroll';
 import { ReactiveBase, CategorySearch, RangeSlider, ResultCard, SingleDropdownList, SelectedFilters } from '@appbaseio/reactivesearch'
 import './index.css'
 
-class App extends Component {
+class Home extends Component {
 
   OpenDetail =(id) =>{
     window.location.href=`/AlbumList/${id}`;
@@ -107,4 +107,4 @@ class App extends Component {
   }
 }
 
-export default App
+export default Home
