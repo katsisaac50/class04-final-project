@@ -39,6 +39,7 @@ class AlbumPreview extends Component {
     render() {
         const { album } = this.state;
         console.log(album )
+
         if(!album)
         {
             return null;

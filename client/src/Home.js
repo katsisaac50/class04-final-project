@@ -23,6 +23,7 @@ class Home extends Component {
           <div className='col'>
           </div>
           <div>
+            
             <Nav/>
             <Header />
             <div class='search'>

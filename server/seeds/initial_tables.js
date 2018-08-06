@@ -30,27 +30,27 @@ exports.seed = function(knex, Promise) {
       return knex('Record').insert(records);
     })
 
-    // .then(function () {
-    //   // Inserts seed entries
-    //   const song = [];
+    .then(function () {
+      // Inserts seed entries
+      const songsList = [];
 
-    //         for (let key in inputData) {
-    //           if(inputData.hasOwnProperty(key)){
-    //             // console.log(key + " -> " + JSON.stringify(inputData[key]));
+            for (let key in inputData) {
+              if(inputData.hasOwnProperty(key)){
+                // console.log(key + " -> " + JSON.stringify(inputData[key]));
 
-    //             song.push({
-    //               // title:inputData[key].title,
-    //               // physical_medium:inputData[key].physical,
-    //               language:inputData[key].language,
-    //               year:inputData[key].year,
-    //               // barcodes:inputData[key].barcodes,
-    //               // tracks:inputData[key].tracks,
-    //                });
-    //           }
-    //         }
-    //         console.log(song)
-    //   return knex('Song').insert(song);
-    // })
+                songsList.push({
+                  title:inputData[key].title,
+                  physical_medium:inputData[key].physical,
+                  // language:inputData[key].language,
+                  // year:inputData[key].year,
+                  // barcodes:inputData[key].barcodes,
+                  // tracks:inputData[key].tracks,
+                   });
+              }
+            }
+            console.log(songsList)
+      return knex('Song').insert(songsList);
+    })
 
     .then(function () {
       // Inserts seed entries
