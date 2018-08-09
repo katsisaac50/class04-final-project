@@ -31,7 +31,7 @@ class ScrollButton extends Component {
       icon='chevron circle up'
       labelPosition='right'
       onClick={ () => { this.scrollToTop(); }}
-      style={{float: 'right'}}
+      style={{float: 'right',width:'13%'}}
       circular
       className='scroll'
     />

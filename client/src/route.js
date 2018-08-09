@@ -12,7 +12,7 @@ class Route1 extends Component {
       <div>
         <Route exact path = "/" component ={Home}/>
         <Route  exact path="/AlbumList" component = {AlbumPreview} />
-        <Route   path="/AlbumList/:id" component = {AlbumPreview} />
+        <Route   path="/AlbumPreview/:id" component = {AlbumPreview} />
         <Route   path="/Signup" component = {Signup} />
 
       </div>

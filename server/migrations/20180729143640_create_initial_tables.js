@@ -19,7 +19,7 @@ exports.up = function (knex, Promise) {
   .createTable('Band',
     function (t) {
       t.increments('id_band').unsigned().primary()
-      t.string('full_name').notNull()
+      t.string('name', 1000)
     })
 .createTable('Band_artist',
 function(t){

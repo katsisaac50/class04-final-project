@@ -10,13 +10,13 @@ exports.seed = function(knex, Promise) {
 
             for (let key in inputData) {
               if(inputData.hasOwnProperty(key)){
-                // console.log(key + " -> " + JSON.stringify(inputData[key]));
+              //   console.log(key + " -> " + JSON.stringify(inputData[key]));
 
                 records.push({
                   title:inputData[key].title,
                   alternative_title:inputData[key].alternativeTitle,
-                  record_label:inputData[key].band,
-                  location:inputData[key].physical,
+                  record_label:inputData[key].label,
+                  location:inputData[key].location,
                   // language:inputData[key].language,
                   // physical:inputData[key].physical,
                   // catNo:inputData[key].catNo,
@@ -28,28 +28,6 @@ exports.seed = function(knex, Promise) {
             }
            // console.log(records)
       return knex('Record').insert(records);
-    })
-
-    .then(function () {
-      // Inserts seed entries
-      const songsList = [];
-
-            for (let key in inputData) {
-              if(inputData.hasOwnProperty(key)){
-                // console.log(key + " -> " + JSON.stringify(inputData[key]));
-
-                songsList.push({
-                  title:inputData[key].title,
-                  physical_medium:inputData[key].physical,
-                  // language:inputData[key].language,
-                  // year:inputData[key].year,
-                  // barcodes:inputData[key].barcodes,
-                  // tracks:inputData[key].tracks,
-                   });
-              }
-            }
-            console.log(songsList)
-      return knex('Song').insert(songsList);
     })
 
     .then(function () {
@@ -67,7 +45,7 @@ exports.seed = function(knex, Promise) {
               }
         
             }
-            console.log(artist)
+            //console.log(artist)
       return knex('Artist').insert(artist);
     })
 
@@ -80,12 +58,38 @@ exports.seed = function(knex, Promise) {
                 // console.log(key + " -> " + JSON.stringify(inputData[key]));
 
                 band.push({
-                  full_name:inputData[key].band,
+                  name:inputData[key].artist,
             
                    });
               }
+              //console.log(band)
             }
       return knex('Band').insert(band);
+    })
+
+    .then(function (rows) {
+      console.log(rows)
+      // Inserts seed entries
+      const songsList = [];
+
+            for (let key in inputData) {
+              if(inputData.hasOwnProperty(key)){
+                // console.log(key + " -> " + JSON.stringify(inputData[key]));
+
+                songsList.push({
+                  title:inputData[key].title,
+                  physical_medium:inputData[key].physical,
+                  song_in_record:rows[0],
+                  band_song_in_band:rows[0],
+                  artist_song_in_artist:rows[0],
+                  // year:inputData[key].year,
+                  // barcodes:inputData[key].barcodes,
+                  // tracks:inputData[key].tracks,
+                   });
+              }
+            }
+            //console.log(songsList)
+      return knex.table('Song').insert(songsList);
     })
     
 };

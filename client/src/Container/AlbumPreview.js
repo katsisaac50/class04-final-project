@@ -9,7 +9,6 @@ import { withRouter } from 'react-router';
 import { Grid, Header, Container, Image, Label, List } from 'semantic-ui-react';
 import ScrollButton from '../Container/scroll';
 
-
 class AlbumPreview extends Component {
 
     constructor(props){
@@ -19,14 +18,15 @@ class AlbumPreview extends Component {
             playMusic: false
         }
     }
+
     componentWillMount(){
-        const id= this.props.match.params.id;
-        console.log(id);
+        const title= this.props.match.params.id;
+        console.log(title);
         axios.get('https://raw.githubusercontent.com/HackYourFuture-CPH/class04-final-project/master/database-24fdbd.json')
             .then((res) => {
                 const albums = res.data;
                // console.log(res.data)
-                const album = albums.filter((album)=>album.id===id)[0]
+                const album = albums.filter((album)=>album.title===title)[0]
                 this.setState({ album:album })
             }).catch(function (error) {
                 console.log(error);
@@ -38,13 +38,12 @@ class AlbumPreview extends Component {
     }
     render() {
         const { album } = this.state;
-        console.log(album )
-
+        
         if(!album)
         {
             return null;
           }
-        
+          console.log(album )
         return (
             <div>
                 {/* <div ><div ><a >Home</a><a >Work</a><a >Company</a><a >Careers</a><div ><a  role="button">Log in</a><a  role="button">Sign Up</a></div></div></div> */}
@@ -68,11 +67,11 @@ class AlbumPreview extends Component {
                                 <div style={{borderBottom: "solid grey 1px", padding: "10px 0"}}>
                                     <List divided style={{borderBottom: "solid grey 1px" }}>
                                         <List.Item style={{padding: "10px 0"}}>
-                                            {'location: '+ album.location}
+                                            {'location: '+ album.catNo}
                                         </List.Item>
                                             
                                         <List.Item style={{padding: "10px 0"}}>
-                                            {'Publish: '+ album.publishedYear}
+                                            {'Publish: '+ album.year}
                                         </List.Item>
                                     </List>
                                    { album.keywords && album.keywords.map(keyword =><Label 
@@ -88,9 +87,12 @@ class AlbumPreview extends Component {
                             <Container style={{paddingTop: '50px'}}>
                                 <Header as="h3">Music</Header>
                                 <List fluid  verticalAlign='middle'  size="big"  >
-                                    {
-                                        album.titles && album.titles.map(music=>{
-                                            const id=album.titles.indexOf(music);
+                                    {console.log(album)
+                                        
+                                    }
+                                    {/* {
+                                        album.map(music=>{
+                                            const id=album.title.indexOf(music);
                                             return(
                                                 <MusicList 
                                                     key={id} 
@@ -101,7 +103,7 @@ class AlbumPreview extends Component {
                                             ) 
                                         }
                                             
-                                    )}
+                                    )} */}
                                 </List>
                             </Container>                                      
                         </Grid.Column>

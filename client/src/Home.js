@@ -11,8 +11,8 @@ import './index.css'
 
 class Home extends Component {
 
-  OpenDetail =(id) =>{
-    window.location.href=`/AlbumList/${id}`;
+  OpenDetail =(title) =>{
+    window.location.href=`/AlbumPreview/${title}`;
 }
   render () {
     
@@ -30,8 +30,8 @@ class Home extends Component {
             
             <CategorySearch
                 componentId='searchbox'
-                dataField={['titles', 'artists','keywords']}
-                categoryField='titles.raw'
+                dataField={['title', 'artist','tracks','label','physical']}
+                categoryField='title.raw'
                 placeholder='Search for music'
                 style={{ padding: '5px',  'marginTop': '2px','width':'35%', 'float':'right'}}
                 innerClass={{ input: 'text-input'}}
@@ -39,10 +39,10 @@ class Home extends Component {
       
             <SingleDropdownList
               componentId='MusicSensor'
-              dataField='publishedYear.raw'
+              dataField='year.raw'
               size={100}
               sortBy='asc'
-              defaultSelected='1950'
+              defaultSelected='All Years'
               showCount={true}
               placeholder='Search Music'
               selectAllLabel='All Years'
@@ -65,18 +65,20 @@ class Home extends Component {
             pages={3}
             react={{ and: ['searchbox', 'yearfilter', 'MusicSensor'] }}
             onData={(res) => {
-                      console.log(res.publishedYear)
+                      console.log(res.year)
                       return {
                         image: 'https://raw.githubusercontent.com/dpfernandes/class04-final-project/master/ama1.png',
-                        title: 'Song Title: ' + res.titles,
+                        title: 'Song Title: ' + res.title,
+                        // url: "https://google.com/search?q=" + res.title,
                         description: (
                         <div>
                           <p>
-                            {'Description: ' + res.artists + ' ' + '★'.repeat(res.location)}
+                            {'Description: ' + res.artist + ' ' + '★'.repeat(res.location)}
                           </p>
                           <p>
-                            {'Pub Year: ' + res.publishedYear}
+                            {'Pub Year: ' + res.year}
                           </p>
+                          
                          {/* <AlbumPreview
                           meta={res}                            
                       /> */}
@@ -84,7 +86,7 @@ class Home extends Component {
                         ),
                     
                         containerProps: {
-                          onClick: ()=>this.OpenDetail(res.id),
+                          onClick: ()=>this.OpenDetail(res.title),
                           // onMouseEnter: () => {
                           //   var x = document.getElementById('myDIV')
                           //   x.innerHTML = 'Details'
