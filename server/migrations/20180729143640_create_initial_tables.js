@@ -45,23 +45,23 @@ function(t){
         t.string('title').notNull()
         t.string('physical_medium')
 
-        t.integer('song_in_record')
+        t.integer('record_has_songs')
         .unsigned()
         .notNullable()
         .references('id_record')
         .inTable('Record')
         
-        t.integer('band_song_in_band')
+        t.integer('band_has_songs')
         .unsigned()
         .notNullable()
-        .references('Band_idBand')
-        .inTable('Band_artist')
+        .references('id_band')
+        .inTable('Band')
 
-        t.integer('artist_song_in_artist')
+        t.integer('artist_has_songs')
         .unsigned()
         .notNullable()
-        .references('Artist_idArtist')
-        .inTable('Band_artist')
+        .references('id_artist')
+        .inTable('Artist')
       })
       
     
