@@ -29,7 +29,7 @@ class App extends Component {
             
             <CategorySearch
                 componentId='searchbox'
-                dataField={['titles', 'artists','keywords']}
+                dataField={['title', 'artist']}
                 categoryField='titles.raw'
                 placeholder='Search for music'
                 style={{ padding: '5px',  'marginTop': '2px','width':'35%', 'float':'right'}}
@@ -38,7 +38,7 @@ class App extends Component {
       
             <SingleDropdownList
               componentId='MusicSensor'
-              dataField='publishedYear.raw'
+              dataField='year.raw'
               size={100}
               sortBy='asc'
               defaultSelected='1950'
@@ -56,7 +56,7 @@ class App extends Component {
           </div>
           <ResultCard
             componentId='result'
-            dataField='titles'
+            dataField='title'
             title='Results'
             from={0}
             size={8}
@@ -64,17 +64,17 @@ class App extends Component {
             pages={3}
             react={{ and: ['searchbox', 'yearfilter', 'MusicSensor'] }}
             onData={(res) => {
-                      console.log(res.publishedYear)
+                      console.log(res.year)
                       return {
                         image: 'https://raw.githubusercontent.com/dpfernandes/class04-final-project/master/ama1.png',
-                        title: 'Song Title: ' + res.titles,
+                        title: 'Song Title: ' + res.title,
                         description: (
                         <div>
                           <p>
-                            {'Description: ' + res.artists + ' ' + '★'.repeat(res.location)}
+                            {'Description: ' + res.artist + ' ' + '★'.repeat(res.location)}
                           </p>
                           <p>
-                            {'Pub Year: ' + res.publishedYear}
+                            {'Pub Year: ' + res.year}
                           </p>
                          {/* <AlbumPreview
                           meta={res}                            
