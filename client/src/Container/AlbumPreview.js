@@ -87,12 +87,12 @@ class AlbumPreview extends Component {
                             <Container style={{paddingTop: '50px'}}>
                                 <Header as="h3">Music</Header>
                                 <List fluid  verticalAlign='middle'  size="big"  >
-                                    {console.log(album)
-                                        
-                                    }
-                                    {/* {
-                                        album.map(music=>{
-                                            const id=album.title.indexOf(music);
+
+                                {console.log(album.title)}
+                                    {
+                                        album.titles && album.titles.map(music=>{
+                                            console.log(music)
+                                            const id=album.titles.indexOf(music);
                                             return(
                                                 <MusicList 
                                                     key={id} 
@@ -103,7 +103,7 @@ class AlbumPreview extends Component {
                                             ) 
                                         }
                                             
-                                    )} */}
+                                    )}
                                 </List>
                             </Container>                                      
                         </Grid.Column>
