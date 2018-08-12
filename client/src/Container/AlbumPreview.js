@@ -88,9 +88,9 @@ class AlbumPreview extends Component {
                                 <Header as="h3">Music</Header>
                                 <List fluid  verticalAlign='middle'  size="big"  >
 
-                                {console.log(album.title)}
+                                {console.log(album)}
                                     {
-                                        album.titles && album.titles.map(music=>{
+                                        album.title && album.title.map(music=>{
                                             console.log(music)
                                             const id=album.titles.indexOf(music);
                                             return(
