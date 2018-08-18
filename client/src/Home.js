@@ -3,18 +3,32 @@ import Header from './Header'
 import Footer from './Footer'
 import Nav from './Container/Nav';
 import ScrollButton from './Container/scroll';
-
+import { Grid, Container, Form, Checkbox, Label } from 'semantic-ui-react';
 
 
 import { ReactiveBase, CategorySearch, RangeSlider, ResultCard, SingleDropdownList, SelectedFilters } from '@appbaseio/reactivesearch'
 import './index.css'
 
 class Home extends Component {
+  constructor(props){
+    super(props);
+    this.state={
+        filter:'all'
+    }
+}
+
+changeRadioValue = (value) =>{ 
+	this.setState({ filter: value })
+}
 
   OpenDetail =(title) =>{
     window.location.href=`/AlbumPreview/${title}`;
 }
   render () {
+
+    const {filter}=this.state
+		const dataField=filter=== 'all'? ["titles", "artists" ] :filter ;
+		const checkboxKey=["all", "titles", "artists" ];
     
     return (
 
@@ -30,12 +44,13 @@ class Home extends Component {
             
             <CategorySearch
                 componentId='searchbox'
-                dataField={['title', 'artist','tracks','label','physical']}
+                dataField={dataField}
                 categoryField='title.raw'
                 placeholder='Search for music'
                 style={{ padding: '5px',  'marginTop': '2px','width':'35%', 'float':'right'}}
                 innerClass={{ input: 'text-input'}}
-                className='CategorySearch' />
+                className='CategorySearch' 
+            />
       
             <SingleDropdownList
               componentId='MusicSensor'
@@ -55,6 +70,25 @@ class Home extends Component {
               />
               </div>
           </div>
+
+          <Form style={{ paddingLeft:" 100px" }}>
+                <Form.Field>
+                  {
+                    checkboxKey.map((checkbox)=>
+                      <Checkbox
+                        key={checkboxKey.indexOf(checkbox)}
+                        radio
+                        style={{padding: '0 5px'}}
+                        label={checkbox}
+                        name='checkboxRadioGroup'
+                        value={checkbox}
+                        checked={filter === `${checkbox}` }
+                        onChange={()=>this.changeRadioValue(checkbox)}
+                      />
+                    )
+                  }
+                </Form.Field>
+					  </Form> 
           <ResultCard
             componentId='result'
             dataField='titles'
@@ -87,13 +121,7 @@ class Home extends Component {
                     
                         containerProps: {
                           onClick: ()=>this.OpenDetail(res.title),
-                          // onMouseEnter: () => {
-                          //   var x = document.getElementById('myDIV')
-                          //   x.innerHTML = 'Details'
-                          // },
-                          // onMouseLeave: (event) => {
-                          //   var x = document.getElementById('myDIV')
-                          //   x.innerHTML = ''}
+
                         },
                     
                       }
