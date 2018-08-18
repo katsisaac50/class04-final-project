@@ -1,6 +1,6 @@
 const inputData = require(__dirname + '/../data/output.json');
 
-const recordNumber = 50
+// const recordNumber = 50
 exports.seed = function(knex, Promise) {
   // Deletes ALL existing entries
   return knex('Record').del()
@@ -30,45 +30,45 @@ exports.seed = function(knex, Promise) {
       return knex('Record').insert(records);
     })
 
-    .then(function () {
-      // Inserts seed entries
-      const artist = [];
+    // .then(function () {
+    //   // Inserts seed entries
+    //   const artist = [];
 
-            for (let key in inputData) {
-              if(inputData.hasOwnProperty(key)){
-                // console.log(key + " -> " + JSON.stringify(inputData[key]));
+    //         for (let key in inputData) {
+    //           if(inputData.hasOwnProperty(key)){
+    //             // console.log(key + " -> " + JSON.stringify(inputData[key]));
 
-                artist.push({
-                  full_name:inputData[key].artist,
+    //             artist.push({
+    //               full_name:inputData[key].artist,
                  
-                   });
-              }
+    //                });
+    //           }
         
-            }
-            //console.log(artist)
-      return knex('Artist').insert(artist);
-    })
+    //         }
+    //         //console.log(artist)
+    //   return knex('Artist').insert(artist);
+    // })
 
-    .then(function () {
-      // Inserts seed entries
-      const band = [];
+    // .then(function () {
+    //   // Inserts seed entries
+    //   const band = [];
 
-            for (let key in inputData) {
-              if(inputData.hasOwnProperty(key)){
-                // console.log(key + " -> " + JSON.stringify(inputData[key]));
+    //         for (let key in inputData) {
+    //           if(inputData.hasOwnProperty(key)){
+    //             // console.log(key + " -> " + JSON.stringify(inputData[key]));
 
-                band.push({
-                  name:inputData[key].artist,
+    //             band.push({
+    //               name:inputData[key].artist,
             
-                   });
-              }
-              //console.log(band)
-            }
-      return knex('Band').insert(band);
-    })
+    //                });
+    //           }
+    //           //console.log(band)
+    //         }
+    //   return knex('Band').insert(band);
+    // })
 
     .then(function (rows) {
-      console.log(rows)
+      // console.log(rows)
       // Inserts seed entries
       const songsList = [];
 
@@ -79,9 +79,12 @@ exports.seed = function(knex, Promise) {
                 songsList.push({
                   title:inputData[key].title,
                   physical_medium:inputData[key].physical,
-                  song_in_record:rows[0],
-                  band_song_in_band:rows[0],
-                  artist_song_in_artist:rows[0],
+                  language:inputData[key].language,
+                  year:inputData[key].year,
+                  band_name:inputData[key].band,
+                  record_in_record:rows[0],
+                  // band_song_in_band:rows[0],
+                  // artist_song_in_artist:rows[0],
                   // year:inputData[key].year,
                   // barcodes:inputData[key].barcodes,
                   // tracks:inputData[key].tracks,
