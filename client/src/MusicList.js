@@ -6,15 +6,26 @@ class MusicList extends Component {
     super(props)
     this.state = {
       hovor: false,
-      "counter":0
+      "counter":6,// this data should from database in future;
+      likeMusic: true
     }
   }
   
    addone=()=>{
     console.log('Isaac')
-    this.setState({
-      "counter": this.state.counter+1
-    })
+    if (this.state.likeMusic === true){
+      this.setState({
+        "counter": this.state.counter+1,
+        likeMusic: false
+      }) }else {
+        this.setState({
+          "counter": this.state.counter-1,
+          likeMusic: true
+        })
+      }
+
+    
+    
   console.log(this.state.counter)
     
     }
@@ -30,13 +41,13 @@ class MusicList extends Component {
       onMouseLeave={() => this.setState({hovor: false})}>
         <List.Content>
         <Button
-      content='Like'
-      icon='heart'
-      label={{ as: 'a', basic: true, content: this.state.counter }}
-      labelPosition='right'
-      onClick={() => this.addone()}
-      style={{float: 'right'}}
-    />
+          content='Like'
+          icon='heart'
+          label={{ as: 'a', basic: true, content: this.state.counter }}
+          labelPosition='right'
+          onClick={() => this.addone()}
+          style={{float: 'right'}}
+        />
 
         </List.Content>
         {hovor ?
