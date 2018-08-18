@@ -47,7 +47,7 @@ class MusicList extends Component {
           <List.Description>
             {album.artists}
           </List.Description>
-          <List.Header key={album.titles.indexOf(music)}>
+          <List.Header key={album.tracks.all.indexOf(music)}>
             {music}
           </List.Header>
         </List.Content>

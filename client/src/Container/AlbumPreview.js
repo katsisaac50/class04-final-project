@@ -38,12 +38,12 @@ class AlbumPreview extends Component {
     }
     render() {
         const { album } = this.state;
-        
+        console.log(album.tracks)
         if(!album)
         {
             return null;
           }
-          console.log(album )
+
         return (
             <div>
                 {/* <div ><div ><a >Home</a><a >Work</a><a >Company</a><a >Careers</a><div ><a  role="button">Log in</a><a  role="button">Sign Up</a></div></div></div> */}
@@ -62,24 +62,31 @@ class AlbumPreview extends Component {
                         </Grid.Column>
                         <Grid.Column computer={5} tablet={5} mobile={16} style={{}}>
                             <Container>
-                                <Header as="h3"> {album.artists} </Header>
+                                <Header as="h3"> {album.artist} </Header>
                                 <Image src="https://raw.githubusercontent.com/dpfernandes/class04-final-project/master/ama1.png"/>
                                 <div style={{borderBottom: "solid grey 1px", padding: "10px 0"}}>
                                     <List divided style={{borderBottom: "solid grey 1px" }}>
-                                        <List.Item style={{padding: "10px 0"}}>
+                                        {/* <List.Item style={{padding: "10px 0"}}>
                                             {'location: '+ album.catNo}
-                                        </List.Item>
+                                        </List.Item> */}
                                             
                                         <List.Item style={{padding: "10px 0"}}>
                                             {'Publish: '+ album.year}
                                         </List.Item>
+                                       { album.language < 1 || album.language == undefined? 
+                                            <List.Item style={{padding: "10px 0"}}>
+                                                {'Language: Not specified'}
+                                            </List.Item>
+                                        : 
+                                            <List.Item style={{padding: "10px 0"}}>
+                                                {
+                                                    'Language: '+ album.language
+                                                }
+                                            </List.Item>
+                                        } 
+                                       
+                                      
                                     </List>
-                                   { album.keywords && album.keywords.map(keyword =><Label 
-                                                                                        key={album.keywords.indexOf(keyword)}
-                                                                                        style={{margin:"5px"}}>
-                                                                                        {keyword}
-                                                                                    </Label> 
-                                    )} 
                                 </div>
                             </Container>
                         </Grid.Column>
@@ -88,22 +95,22 @@ class AlbumPreview extends Component {
                                 <Header as="h3">Music</Header>
                                 <List fluid  verticalAlign='middle'  size="big"  >
 
-                                {console.log(album)}
-                                    {
-                                        album.title && album.title.map(music=>{
-                                            console.log(music)
-                                            const id=album.titles.indexOf(music);
+                               
+                                    {album.tracks && album.tracks.all.map(track => {
+                                            console.log(track)
+                                           const id=album.tracks.all.indexOf(track );
+                                           console.log(id)
                                             return(
                                                 <MusicList 
-                                                    key={id} 
-                                                    music={music} 
+                                                    music={track} 
                                                     album={album}
                                                     playMusic={this.playMusic}
                                                 /> 
                                             ) 
-                                        }
-                                            
-                                    )}
+                                        })
+                                        
+                                    
+                                    }
                                 </List>
                             </Container>                                      
                         </Grid.Column>
