@@ -27,8 +27,8 @@ changeRadioValue = (value) =>{
   render () {
 
     const {filter}=this.state
-		const dataField=filter=== 'all'? ["titles", "artists" ] :filter ;
-		const checkboxKey=["all", "titles", "artists" ];
+		const dataField=filter=== 'all'? ["title", "artist" ] : filter ;
+		const checkboxKey=["all", "title", "artist"];
     
     return (
 
