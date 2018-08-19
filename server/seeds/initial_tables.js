@@ -5,94 +5,39 @@ exports.seed = function(knex, Promise) {
   // Deletes ALL existing entries
   return knex('Record').del()
     .then(function () {
+
+      let records = [];
+      let id = 1;
+
       // Inserts seed entries
-      const records = [];
+      for (let key in inputData) {
+        records.push({id_record: id++, title: inputData[key].title});//ids are set manually here so we know where there.
+      }
+      console.log(records)
+      return   knex('Record')
+              .insert(records)
+              .then(function (row) {        
 
+            let songsList = [];
+            let id = 1; 
             for (let key in inputData) {
-              if(inputData.hasOwnProperty(key)){
-              //   console.log(key + " -> " + JSON.stringify(inputData[key]));
-
-                records.push({
-                  title:inputData[key].title,
-                  alternative_title:inputData[key].alternativeTitle,
-                  record_label:inputData[key].label,
-                  location:inputData[key].location,
-                  // language:inputData[key].language,
-                  // physical:inputData[key].physical,
-                  // catNo:inputData[key].catNo,
-                  // barcodes:inputData[key].barcodes,
-                  // tracks:inputData[key].tracks,
-                   });
-              }
-        
+  
+              console.log(key);
+  
+              for (track in inputData[key].tracks.all) {
+                songsList.push( {
+                   title: inputData[key].tracks.all[track],
+                   record_idrecord: id
+                 });           
+               }
+               id=id+1;
             }
-           // console.log(records)
-      return knex('Record').insert(records);
-    })
 
-    // .then(function () {
-    //   // Inserts seed entries
-    //   const artist = [];
+              return   knex('Song')
+              .insert(songsList);
+ 
 
-    //         for (let key in inputData) {
-    //           if(inputData.hasOwnProperty(key)){
-    //             // console.log(key + " -> " + JSON.stringify(inputData[key]));
+            }).catch(err => console.error(err));
 
-    //             artist.push({
-    //               full_name:inputData[key].artist,
-                 
-    //                });
-    //           }
-        
-    //         }
-    //         //console.log(artist)
-    //   return knex('Artist').insert(artist);
-    // })
-
-    // .then(function () {
-    //   // Inserts seed entries
-    //   const band = [];
-
-    //         for (let key in inputData) {
-    //           if(inputData.hasOwnProperty(key)){
-    //             // console.log(key + " -> " + JSON.stringify(inputData[key]));
-
-    //             band.push({
-    //               name:inputData[key].artist,
-            
-    //                });
-    //           }
-    //           //console.log(band)
-    //         }
-    //   return knex('Band').insert(band);
-    // })
-
-    .then(function (rows) {
-      // console.log(rows)
-      // Inserts seed entries
-      const songsList = [];
-
-            for (let key in inputData) {
-              if(inputData.hasOwnProperty(key)){
-                // console.log(key + " -> " + JSON.stringify(inputData[key]));
-
-                songsList.push({
-                  title:inputData[key].title,
-                  physical_medium:inputData[key].physical,
-                  language:inputData[key].language,
-                  year:inputData[key].year,
-                  band_name:inputData[key].band,
-                  record_in_record:rows[0],
-                  // band_song_in_band:rows[0],
-                  // artist_song_in_artist:rows[0],
-                  // year:inputData[key].year,
-                  // barcodes:inputData[key].barcodes,
-                  // tracks:inputData[key].tracks,
-                   });
-              }
-            }
-            //console.log(songsList)
-      return knex.table('Song').insert(songsList);
-    })
-    
+    });
 };
