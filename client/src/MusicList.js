@@ -12,7 +12,6 @@ class MusicList extends Component {
   }
   
    addone=()=>{
-    console.log('Isaac')
     if (this.state.likeMusic === true){
       this.setState({
         "counter": this.state.counter+1,

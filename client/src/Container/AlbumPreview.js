@@ -73,7 +73,7 @@ class AlbumPreview extends Component {
                                         <List.Item style={{padding: "10px 0"}}>
                                             {'Publish: '+ album.year}
                                         </List.Item>
-                                       { album.language < 1 || album.language == undefined? 
+                                       { album.language < 1 || album.language === undefined? 
                                             <List.Item style={{padding: "10px 0"}}>
                                                 {'Language: Not specified'}
                                             </List.Item>
