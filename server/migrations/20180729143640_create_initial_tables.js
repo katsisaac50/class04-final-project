@@ -66,27 +66,19 @@ exports.up = function (knex, Promise) {
 
 .createTable('Record',
     function (t) {
+     
       t.increments('id_record').unsigned().primary()
       t.string('title').notNull()
       t.string('alternative_title')
-      t.string('record_label')
-      t.string('location')
+     
     })
     .createTable('Song',
       function (t) {
         t.increments('id_song').unsigned().primary()
         t.string('title').notNull()
-        t.string('physical_medium')
-t.string('language')
-t.integer ('year')
-// t.string('genre')
-// t.string('Audio_sample_path')
-t.string('band_name')
-t.integer('record_id_record')
-        .unsigned()
-        .notNullable()
-        .references('id_record')
-        .inTable('Record')
+
+t.integer('record_idrecord').unsigned();
+t.foreign('record_idrecord').references('Record.id_record');
 })
     
 }
@@ -96,6 +88,43 @@ exports.down = function (knex, Promise) {
   // .dropTable('Band')
   .dropTable('Song')
   // .dropTable('Artist')
-  // .dropTable('Band_artist')
+  // .dropTable('Band_artist')    // .then(function () {
+    //   // Inserts seed entries
+    //   const artist = [];
+
+    //         for (let key in inputData) {
+    //           if(inputData.hasOwnProperty(key)){
+    //             // console.log(key + " -> " + JSON.stringify(inputData[key]));
+
+    //             artist.push({
+    //               full_name:inputData[key].artist,
+                 
+    //                });
+    //           }
+        
+    //         }
+    //         //console.log(artist)
+    //   return knex('Artist').insert(artist);
+    // })
+
+    // .then(function () {
+    //   // Inserts seed entries
+    //   const band = [];
+
+    //         for (let key in inputData) {
+    //           if(inputData.hasOwnProperty(key)){
+    //             // console.log(key + " -> " + JSON.stringify(inputData[key]));
+
+    //             band.push({
+    //               name:inputData[key].artist,
+            
+    //                });
+    //           }
+    //           //console.log(band)
+    //         }
+    //   return knex('Band').insert(band);
+    // })
+
+
   .dropTable('Record')
 }
