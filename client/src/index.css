@@ -149,21 +149,18 @@ audio{
   }
 
   
-/* .CategorySearch .text-input {
-  width: 40%;
-  box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 30px;
+ .CategorySearch .text-input {
   font-size: 20px;
-  height: 30px;
-}.CategorySearch .text-input {
-  width: 20%;
+}
+
+/*.CategorySearch .text-input {
+  
   box-sizing: border-box;
   border: 2px solid #ccc;
   border-radius: 30px;
   font-size: 20px;
   height: 40px;
-  float: right;
+  
   padding: 6px;
   margin-right: 16px;
   border: none;
@@ -248,15 +245,14 @@ header .banner-text h3 {
   background-color: #2196F3;
   color: white;
 }
-.CategorySearch .text-input {
-  width: 70%;
-  /* box-sizing: border-box; */
-  border: 2px solid #ccc;
+.text-input  {
+ 
   border-radius: 30px;
-  font-size: 20px;
-  /* float: right; */
-  border: none;
+  
+  
 } 
+
+
 .search {
   /* overflow: hidden; */
   background-color: #D0ADC5;
