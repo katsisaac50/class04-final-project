@@ -41,7 +41,24 @@ changeRadioValue = (value) =>{
             <Nav/>
             <Header />
             <div class='search'>
-            
+            <Form style={{ paddingLeft:" 10px",'float':'right', 'marginTop': '20px' }}>
+                <Form.Field>
+                  {
+                    checkboxKey.map((checkbox)=>
+                      <Checkbox
+                        key={checkboxKey.indexOf(checkbox)}
+                        radio
+                        style={{padding: '0 5px'}}
+                        label={checkbox}
+                        name='checkboxRadioGroup'
+                        value={checkbox}
+                        checked={filter === `${checkbox}` }
+                        onChange={()=>this.changeRadioValue(checkbox)}
+                      />
+                    )
+                  }
+                </Form.Field>
+					  </Form>
             <CategorySearch
                 componentId='searchbox'
                 dataField={dataField}
@@ -64,31 +81,14 @@ changeRadioValue = (value) =>{
               react={{ and: ['searchbox'] }}
               showFilter={true}
               filterLabel='Year'
-              style={{ padding: '5px', 'marginTop': '2px','marginRight': '5px','width':'50%','borderRadius': '80px'}}
+              style={{ padding: '5px', 'marginTop': '2px','marginRight': '5px','width':'30%'}}
               URLParams={false} 
-              innerClass={{ icon: 'text-input'}}
+              innerClass={{ input: 'text-input'}}
+              className='SingleDropdownList'
               />
+              
               </div>
           </div>
-
-          <Form style={{ paddingLeft:" 100px" }}>
-                <Form.Field>
-                  {
-                    checkboxKey.map((checkbox)=>
-                      <Checkbox
-                        key={checkboxKey.indexOf(checkbox)}
-                        radio
-                        style={{padding: '0 5px'}}
-                        label={checkbox}
-                        name='checkboxRadioGroup'
-                        value={checkbox}
-                        checked={filter === `${checkbox}` }
-                        onChange={()=>this.changeRadioValue(checkbox)}
-                      />
-                    )
-                  }
-                </Form.Field>
-					  </Form> 
           <ResultCard
             componentId='result'
             dataField='titles'
