@@ -57,7 +57,7 @@ class MusicList extends Component {
     
   render () {
     let songz=this.state.songsData.myJson
-    console.log(songz);
+    console.log(songz);   
     const { music, album, playMusic } = this.props
     //console.log(this.props)
 
