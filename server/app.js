@@ -3,7 +3,10 @@ var path = require('path');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
-var categoriesRouter = require('./routes/categories');
+var recordsRouter = require('./routes/records');
+var songsRouter = require('./routes/songs');
+var songRouter = require('./routes/song');
+
 
 var app = express();
 
@@ -15,6 +18,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use('/', indexRouter);
 
 // TODO: insert a new route here :)
-app.use('/categories', categoriesRouter);
+app.use('/records', recordsRouter);
+app.use('/songs', songsRouter);
+app.use('/song', songRouter);
 
 module.exports = app;
