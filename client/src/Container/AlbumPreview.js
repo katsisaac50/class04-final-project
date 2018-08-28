@@ -6,7 +6,7 @@ import MusicList from '../MusicList';
 import MusicPlay from '../MusicPlay';
 import axios from 'axios';
 import { withRouter } from 'react-router';
-import { Grid, Header, Container, Image, Label, List } from 'semantic-ui-react';
+import { Grid, Header, Container, Image, List } from 'semantic-ui-react';
 import ScrollButton from '../Container/scroll';
 
 class AlbumPreview extends Component {
