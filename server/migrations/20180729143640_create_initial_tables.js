@@ -76,10 +76,20 @@ exports.up = function (knex, Promise) {
       function (t) {
         t.increments('id_song').unsigned().primary()
         t.string('title').notNull()
+        t.integer('likes').notNull().defaultTo(0)
 
 t.integer('record_idrecord').unsigned();
 t.foreign('record_idrecord').references('Record.id_record');
 })
+
+// .createTable('Likes',
+//     function (t) {
+     
+//       t.increments('id_likes').unsigned().primary()
+//       t.integer('song_idlike').unsigned();
+// t.foreign('song_idlike').references('Song.id_song');
+     
+//     })
     
 }
 
@@ -126,5 +136,7 @@ exports.down = function (knex, Promise) {
     // })
 
 
-  .dropTable('Record')
+  // .dropTable('Record')
+  .dropTable('Song')
+  // .dropTable('Likes')
 }
