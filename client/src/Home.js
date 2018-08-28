@@ -3,10 +3,10 @@ import Header from './Header'
 import Footer from './Footer'
 import Nav from './Container/Nav';
 import ScrollButton from './Container/scroll';
-import { Grid, Container, Form, Checkbox, Label } from 'semantic-ui-react';
+import { Form, Checkbox} from 'semantic-ui-react';
 
 
-import { ReactiveBase, CategorySearch, RangeSlider, ResultCard, SingleDropdownList, SelectedFilters } from '@appbaseio/reactivesearch'
+import { ReactiveBase, CategorySearch, ResultCard, SingleDropdownList } from '@appbaseio/reactivesearch'
 import './index.css'
 
 class Home extends Component {
@@ -81,10 +81,10 @@ changeRadioValue = (value) =>{
               react={{ and: ['searchbox'] }}
               showFilter={true}
               filterLabel='Year'
-              style={{ padding: '5px', 'marginTop': '2px','marginRight': '5px','width':'30%'}}
+              style={{ padding: '5px', borderRadius:"20px", 'marginTop': '2px','marginRight': '5px','width':'30%'}}
               URLParams={false} 
               innerClass={{ input: 'text-input'}}
-              className='SingleDropdownList'
+              className='drop-field'
               />
               
               </div>
@@ -132,6 +132,7 @@ changeRadioValue = (value) =>{
         </div>
         <ScrollButton scrollStepInPx="50" delayInMs="16.66"/>
         <Footer/>
+        <style jsx>{``}</style>
       </ReactiveBase>
     )
     
