@@ -1,36 +1,66 @@
 import React, { Component } from 'react'
 import { List, Icon, Button } from 'semantic-ui-react'
 
+
+const allSongs = "/songs";
+const song = "http://localhost:3001/song";
 class MusicList extends Component {
   constructor (props) {
     super(props)
     this.state = {
       hovor: false,
-      "counter":6,// this data should from database in future;
-      likeMusic: true
+      counter:0,// this data should from database in future;
+      likeMusic: true,
+      songsData:{}
     }
+    
+  }
+
+  getData(){
+    fetch(allSongs, /* {mode: 'no-cors'} */)
+    .then((response) =>{
+      return response.json();
+    })
+    .then((myJson)=>{
+      console.log(myJson, 'fresh data!');
+      this.setState({songsData: {myJson}})
+      
+    });
+  }
+
+  componentDidMount(){
+    this.getData()
   }
   
-   addone=()=>{
-    if (this.state.likeMusic === true){
-      this.setState({
-        "counter": this.state.counter+1,
-        likeMusic: false
-      }) }else {
+
+
+  handleLikes=(song)=>{
+    console.log(song)
+    let id_song=song.map(song=>song.id_song)
+    console.log('handle likes for ', id_song);
+    let method = this.state.likeMusic ? 'PUT' :'DELETE'
+  
+    fetch(song+'/'+id_song,{method:method})
+      .then((response)=>{
+        console.log(response.body);
+        return response.json();
+      })
+      .then((myJson)=> {
         this.setState({
-          "counter": this.state.counter-1,
-          likeMusic: true
-        })
-      }
+          counter: myJson,
+          likeMusic: !this.state.likeMusic
+        }) 
+    })
+  }
+
 
     
-    
-  console.log(this.state.counter)
-    
-    }
   render () {
+    let songz=this.state.songsData.myJson
+    console.log(songz);
     const { music, album, playMusic } = this.props
-    //console.log(album)
+    //console.log(this.props)
+
     const { hovor } = this.state
     const backgroundColor = hovor ? 'rgba(0, 0, 0, 0.4)' : 'rgba(0, 0, 0, 0.1)'
     return (
@@ -44,7 +74,7 @@ class MusicList extends Component {
           icon='heart'
           label={{ as: 'a', basic: true, content: this.state.counter }}
           labelPosition='right'
-          onClick={() => this.addone()}
+          onClick={() => this.handleLikes(songz)} // NEEDS song
           style={{float: 'right'}}
         />
 
