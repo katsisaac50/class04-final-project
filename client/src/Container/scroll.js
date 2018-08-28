@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { List, Icon, Button, Segment} from 'semantic-ui-react';
+import { Button} from 'semantic-ui-react';
 
 
 
