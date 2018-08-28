@@ -3,35 +3,7 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
-.cbtm{
-  margin-left: 10px;
-    margin-top: 4px;
-    padding: 9px 0 8px!important;
-    width: 88px;
-    text-align: center;
-  border-radius: 3px;
-    font-size: 1.3em;
-    line-height: 1.308em;
-    font-weight: 700;
-    letter-spacing: .077em;
-    
-}
-.cbtn{margin-left: 10px;
-    margin-top: 4px;
-    padding: 9px 0 8px!important;
-    width: 88px;
-    text-align: center;
-  border-radius: 3px;
-    font-size: 1.3em;
-    line-height: 1.308em;
-    font-weight: 700;
-    letter-spacing: .077em;
-    background-color: #f3a7f3;  
-}
-.signup{
-  float: right;
-  margin-right: 8px;
-}
+
 /* Full-width input fields */
 input[type=text], input[type=password] {
   width: 100%;
@@ -251,7 +223,12 @@ header .banner-text h3 {
   
   
 } 
-
+.drop-field  {
+ 
+  border-radius: 30px;
+  
+  
+}
 
 .search {
   /* overflow: hidden; */
