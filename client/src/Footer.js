@@ -21,9 +21,10 @@ class Footer extends Component {
       <h4 className="footer-list-header">Contributors</h4></li>
 
 
-    <li><a href='/Isaac' className="generic-anchor footer-list-anchor">KATONGOLE ISAAC</a></li>
-    <li><a href='/Magdy' className="generic-anchor footer-list-anchor">MAGDY AHMED</a></li>
-    <li><a href='/Emil' className="generic-anchor footer-list-anchor">EMILBAYES</a></li>
+    <li><a href='https://github.com/katsisaac50' className="generic-anchor footer-list-anchor">KATONGOLE ISAAC</a></li>
+    <li><a href='https://github.com/YinanDK' className="generic-anchor footer-list-anchor">YINAN</a></li>
+    <li><a href='https://github.com/a-magdy' className="generic-anchor footer-list-anchor">MAGDY AHMED</a></li>
+    <li><a href='https://github.com/emilbayes' className="generic-anchor footer-list-anchor">EMILBAYES</a></li>
   </ul>
   <ul className="footer-list-top">
     <li id='help'>
