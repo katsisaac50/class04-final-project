@@ -40,7 +40,7 @@ changeRadioValue = (value) =>{
             
             <Nav/>
             <Header />
-            <div class='search'>
+            <div className='search'>
             <Form style={{ paddingLeft:" 10px",'float':'right', 'marginTop': '20px' }}>
                 <Form.Field>
                   {
