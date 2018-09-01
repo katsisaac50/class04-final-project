@@ -26,7 +26,7 @@ class AlbumPreview extends Component {
             .then((res) => {
                 const albums = res.data;
                // console.log(res.data)
-                const album = albums.filter((album)=>album.title===title)[0]
+                const album = albums.filter((album)=>album.title)[0]
                 this.setState({ album:album })
             }).catch(function (error) {
                 console.log(error);

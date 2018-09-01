@@ -7,7 +7,7 @@ class About extends Component {
     
     return (
 
-        <div>
+        <div style={{ 'backgroundColor': 'blue','height':'900px'}}>
 <h1>This is the about page</h1>
 
         </div>

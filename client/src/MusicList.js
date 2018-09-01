@@ -36,7 +36,7 @@ class MusicList extends Component {
 
   handleLikes=(song)=>{
     console.log(song)
-    let id_song=song.map(song=>song.id_song)
+    let id_song=song/*.filter(song.title===this.props.album.title).map(song=>song.id_song) */
     console.log('handle likes for ', id_song);
     let method = this.state.likeMusic ? 'PUT' :'DELETE'
   
