@@ -3,7 +3,7 @@ import { List, Icon, Button } from 'semantic-ui-react'
 import ScrollButton from './Container/scroll';
 
 
-const allSongs = "/songs";
+const song = "/songs";
 
 class Track extends Component {
   constructor (props) {
@@ -12,16 +12,30 @@ class Track extends Component {
       hovor: false,
       
       likeMusic: true,
-      songsData:{}
+      Albums:{}
     }
    
   }
+
+  getData(){
+fetch('/song'+'/'+this.props.track, {method: 'GET'})
+.then((response) =>{
+  console.log(response.json().likes)
+return response
+
+})
+
+}
+
+componentDidMount(){
+this.getData()
+}
 
   render () {
     //let songz=this.state.songsData.albumData
     //console.log(songz);   
     const { track, album, playMusic } = this.props    // destruct music,album, playMusic from props
-  console.log(album)
+  console.log(this.props)
     // destruct music,album, playMusic from props
 
     const { hovor } = this.state
