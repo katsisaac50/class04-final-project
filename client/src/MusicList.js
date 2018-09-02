@@ -24,15 +24,30 @@ class MusicList extends Component {
     })
     .then((albumData)=>{
       // here we set songsData to albumData
-      this.setState({songsData: {albumData,}})
+      this.setState({songsData: {albumData}})
       console.log(albumData)
       
     });
   }
 
   componentDidMount(){
-    this.getData()
+    this.getData();
+    let songz=this.state.songsData.albumData;
+    let id_song=songz.filter(item=>item.title===this.props.album.title)[0].id_song
+    let songLikes=songz.filter(item=>item.title===this.props.album.title)[0].likes
+    fetch('/song'+'/'+id_song )
+      .then((response)=>{
+        console.log(response.body);
+        return response.text();
+      })
+      .then((text)=> {
+        this.setState({
+          counter: songLikes
+        }) 
+    })
+
   }
+  
   
 
 
@@ -64,7 +79,7 @@ class MusicList extends Component {
     let songz=this.state.songsData.albumData
     console.log(songz);   
     const { music, album, playMusic } = this.props    // destruct music,album, playMusic from props
-
+  console.log(album)
     // destruct music,album, playMusic from props
 
     const { hovor } = this.state
