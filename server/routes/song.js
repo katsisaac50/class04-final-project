@@ -4,12 +4,13 @@ var router = express.Router();
 var knex  = require('../helpers/knex');
 
 /* GET category listing. */ 
-/* router.get("/:songid", function(req, res, next) {
-  //console.log(res) 
-  knex('Song').select().then( function(data) {
+router.get("/:songid", function(req, res, next) {
+  console.log(req.params.songid) 
+
+  knex('Song').select().where('title', req.params.songid).then( function(data) {
     res.send(data);
   });
-}); */
+});
 
 
 
