@@ -30,6 +30,23 @@ return response.json()
 
 }
 
+handleLikes=()=>{
+    
+    let method = this.state.likeMusic ? 'PUT' :'DELETE'
+  
+    fetch('/song'+'/'+this.props.track,{method:method})
+      .then((response)=>{
+        console.log(response.body);
+        return response.text();
+      })
+      .then((text)=> {
+        
+        this.setState({
+          likeMusic: !this.state.likeMusic
+        }) 
+    })
+  }
+
 componentDidMount(){
 this.getData()
 }
@@ -55,7 +72,7 @@ this.getData()
           icon='heart'
           label={{ as: 'a', basic: true, content:  this.state.trackData ? this.state.trackData[0].likes : 0 }}
           labelPosition='right'
-         // onClick={() => this.handleLikes(songz)} // NEEDS song
+         onClick={() => this.handleLikes()} // NEEDS song
           style={{float: 'right'}}
         />
 
