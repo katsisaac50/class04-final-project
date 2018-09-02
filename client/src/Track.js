@@ -45,7 +45,9 @@ handleLikes=()=>{
           likeMusic: !this.state.likeMusic
         }) 
     })
+    this.getData()
   }
+
 
 componentDidMount(){
 this.getData()
