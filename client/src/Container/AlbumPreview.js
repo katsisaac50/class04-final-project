@@ -102,7 +102,7 @@ class AlbumPreview extends Component {
                                            console.log(id)
                                             return(
                                                 <Track
-                                                    music={track} 
+                                                    track={track} 
                                                     album={album}
                                                     playMusic={this.playMusic}
                                                 /> 

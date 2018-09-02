@@ -64,7 +64,7 @@ class Track extends Component {
   render () {
     //let songz=this.state.songsData.albumData
     //console.log(songz);   
-    const { music, album, playMusic } = this.props    // destruct music,album, playMusic from props
+    const { track, album, playMusic } = this.props    // destruct music,album, playMusic from props
   console.log(album)
     // destruct music,album, playMusic from props
 
@@ -94,8 +94,8 @@ class Track extends Component {
           <List.Description>
             {album.artists}
           </List.Description>
-          <List.Header key={album.tracks.all.indexOf(music)}>
-            {music}
+          <List.Header key={album.tracks.all.indexOf(track)}>
+            {track}
           </List.Header>
         </List.Content>
       </List.Item>
