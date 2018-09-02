@@ -20,9 +20,12 @@ class Track extends Component {
   getData(){
 fetch('/song'+'/'+this.props.track)
 .then((response) =>{
-  console.log(response.json())
-return response
+  
+return response.json()
 
+
+}).then((data)=>{
+  this.setState({trackData:data})
 })
 
 }
@@ -40,6 +43,7 @@ this.getData()
 
     const { hovor } = this.state
     const backgroundColor = hovor ? 'rgba(0, 0, 0, 0.4)' : 'rgba(0, 0, 0, 0.1)'
+
     return (
       <List.Item style={{width: '100%', marginTop: '10px', padding: '5px', 
       backgroundColor: `${backgroundColor}`}} 
@@ -49,7 +53,7 @@ this.getData()
         <Button
           content='Like'
           icon='heart'
-          label={{ as: 'a', basic: true, content: 2 }}
+          label={{ as: 'a', basic: true, content:  this.state.trackData ? this.state.trackData[0].likes : 0 }}
           labelPosition='right'
          // onClick={() => this.handleLikes(songz)} // NEEDS song
           style={{float: 'right'}}
