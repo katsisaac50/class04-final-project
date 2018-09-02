@@ -18,9 +18,9 @@ class Track extends Component {
   }
 
   getData(){
-fetch('/song'+'/'+this.props.track, {method: 'GET'})
+fetch('/song'+'/'+this.props.track)
 .then((response) =>{
-  console.log(response.json().likes)
+  console.log(response.json())
 return response
 
 })
