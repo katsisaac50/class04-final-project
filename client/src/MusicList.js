@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import { List, Icon, Button } from 'semantic-ui-react'
+import ScrollButton from './Container/scroll';
 
 
 const allSongs = "/songs";
-const song = "http://localhost:3001/song";
+
 class MusicList extends Component {
   constructor (props) {
     super(props)
@@ -13,7 +14,7 @@ class MusicList extends Component {
       likeMusic: true,
       songsData:{}
     }
-    
+   
   }
 
   getData(){
@@ -21,9 +22,10 @@ class MusicList extends Component {
     .then((response) =>{
       return response.json();
     })
-    .then((myJson)=>{
-      console.log(myJson, 'fresh data!');
-      this.setState({songsData: {myJson}})
+    .then((albumData)=>{
+      // here we set songsData to albumData
+      this.setState({songsData: {albumData,}})
+      console.log(albumData)
       
     });
   }
@@ -35,19 +37,22 @@ class MusicList extends Component {
 
 
   handleLikes=(song)=>{
-    console.log(song)
-    let id_song=song/*.filter(song.title===this.props.album.title).map(song=>song.id_song) */
-    console.log('handle likes for ', id_song);
+    
+    let id_song=song.filter(item=>item.title===this.props.album.title)[0].id_song
+    let songLikes=song.filter(item=>item.title===this.props.album.title)[0].likes
+    
+    // console.log('handle likes for ', id_song);
     let method = this.state.likeMusic ? 'PUT' :'DELETE'
   
-    fetch(song+'/'+id_song,{method:method})
+    fetch('/song'+'/'+id_song,{method:method})
       .then((response)=>{
         console.log(response.body);
-        return response.json();
+        return response.text();
       })
-      .then((myJson)=> {
+      .then((text)=> {
+        console.log(song)
         this.setState({
-          counter: myJson,
+          counter: songLikes,
           likeMusic: !this.state.likeMusic
         }) 
     })
@@ -56,10 +61,11 @@ class MusicList extends Component {
 
     
   render () {
-    let songz=this.state.songsData.myJson
+    let songz=this.state.songsData.albumData
     console.log(songz);   
-    const { music, album, playMusic } = this.props
-    //console.log(this.props)
+    const { music, album, playMusic } = this.props    // destruct music,album, playMusic from props
+
+    // destruct music,album, playMusic from props
 
     const { hovor } = this.state
     const backgroundColor = hovor ? 'rgba(0, 0, 0, 0.4)' : 'rgba(0, 0, 0, 0.1)'
