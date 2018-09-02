@@ -5,7 +5,7 @@ import ScrollButton from './Container/scroll';
 
 const allSongs = "/songs";
 
-class MusicList extends Component {
+class Track extends Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -17,67 +17,53 @@ class MusicList extends Component {
    
   }
 
-  getData(){
-    fetch(allSongs, /* {mode: 'no-cors'} */)
-    .then((response) =>{
-      return response.json();
-    })
-    .then((albumData)=>{
-      // here we set songsData to albumData
-      this.setState({songsData: {albumData}})
-      console.log(albumData)
+  // getData(){
+  //   fetch(allSongs, /* {mode: 'no-cors'} */)
+  //   .then((response) =>{
+  //     return response.json();
+  //   })
+  //   .then((albumData)=>{
+  //     // here we set songsData to albumData
+  //     this.setState({songsData: {albumData,}})
+  //     console.log(albumData)
       
-    });
-  }
+  //   });
+  // }
 
-  componentDidMount(){
-    this.getData();
-    let songz=this.state.songsData.albumData;
-    let id_song=songz.filter(item=>item.title===this.props.album.title)[0].id_song
-    let songLikes=songz.filter(item=>item.title===this.props.album.title)[0].likes
-    fetch('/song'+'/'+id_song )
-      .then((response)=>{
-        console.log(response.body);
-        return response.text();
-      })
-      .then((text)=> {
-        this.setState({
-          counter: songLikes
-        }) 
-    })
-
-  }
+  // componentDidMount(){
+  //   this.getData()
+  // }
   
   
 
 
-  handleLikes=(song)=>{
+  // handleLikes=(song)=>{
     
-    let id_song=song.filter(item=>item.title===this.props.album.title)[0].id_song
-    let songLikes=song.filter(item=>item.title===this.props.album.title)[0].likes
+  //   let id_song=song.filter(item=>item.title===this.props.album.title)[0].id_song
+  //   let songLikes=song.filter(item=>item.title===this.props.album.title)[0].likes
     
-    // console.log('handle likes for ', id_song);
-    let method = this.state.likeMusic ? 'PUT' :'DELETE'
+  //   // console.log('handle likes for ', id_song);
+  //   let method = this.state.likeMusic ? 'PUT' :'DELETE'
   
-    fetch('/song'+'/'+id_song,{method:method})
-      .then((response)=>{
-        console.log(response.body);
-        return response.text();
-      })
-      .then((text)=> {
-        console.log(song)
-        this.setState({
-          counter: songLikes,
-          likeMusic: !this.state.likeMusic
-        }) 
-    })
-  }
+  //   fetch('/song'+'/'+id_song,{method:method})
+  //     .then((response)=>{
+  //       console.log(response.body);
+  //       return response.text();
+  //     })
+  //     .then((text)=> {
+  //       console.log(song)
+  //       this.setState({
+  //         counter: songLikes,
+  //         likeMusic: !this.state.likeMusic
+  //       }) 
+  //   })
+  // }
 
 
     
   render () {
-    let songz=this.state.songsData.albumData
-    console.log(songz);   
+    //let songz=this.state.songsData.albumData
+    //console.log(songz);   
     const { music, album, playMusic } = this.props    // destruct music,album, playMusic from props
   console.log(album)
     // destruct music,album, playMusic from props
@@ -95,7 +81,7 @@ class MusicList extends Component {
           icon='heart'
           label={{ as: 'a', basic: true, content: this.state.counter }}
           labelPosition='right'
-          onClick={() => this.handleLikes(songz)} // NEEDS song
+         // onClick={() => this.handleLikes(songz)} // NEEDS song
           style={{float: 'right'}}
         />
 
@@ -117,4 +103,4 @@ class MusicList extends Component {
   }
 }
 
-export default MusicList
+export default Track

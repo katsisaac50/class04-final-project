@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Nav from '../Container/Nav';
 import AppHeader from '../Header';
 import AppFooter from '../Footer';
-import MusicList from '../MusicList';
+import Track from '../Track';
 import MusicPlay from '../MusicPlay';
 import axios from 'axios';
 import { withRouter } from 'react-router';
@@ -26,7 +26,7 @@ class AlbumPreview extends Component {
             .then((res) => {
                 const albums = res.data;
                // console.log(res.data)
-                const album = albums.filter((album)=>album.title)[0]
+                const album = albums.filter((album)=>title === album.title)[0]
                 this.setState({ album:album })
             }).catch(function (error) {
                 console.log(error);
@@ -101,7 +101,7 @@ class AlbumPreview extends Component {
                                            const id=album.tracks.all.indexOf(track );
                                            console.log(id)
                                             return(
-                                                <MusicList 
+                                                <Track
                                                     music={track} 
                                                     album={album}
                                                     playMusic={this.playMusic}
